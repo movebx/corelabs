@@ -1,14 +1,26 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Codebuster
- * Date: 17.09.2015
- * Time: 18:51
- */
 
 namespace framework\Model;
 
 
-class Connection {
+class Connection
+{
+    static private $_pdo_;
+    public function __construct($params)
+    {
+        $dns = $params['dns'];
+        $user = $params['user'];
+        $password = $params['password'];
+
+        try
+        {
+            $pdo = new \PDO($dns, $user, $password);
+            self::$_pdo_ = $pdo;
+        }
+        catch (\PDOException $e)
+        {
+            die('SQL CONNECTION ERROR');
+        }
+    }
 
 } 
