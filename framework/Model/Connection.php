@@ -6,6 +6,7 @@ namespace framework\Model;
 class Connection
 {
     static private $_pdo_;
+
     public function __construct($params)
     {
         $dns = $params['dns'];
