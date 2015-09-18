@@ -1,11 +1,11 @@
 <?php
 
 
-namespace framework;
+namespace Framework;
 
 
-use framework\DI\ServiceLocator;
-use framework\Model\Connection;
+use Framework\DI\ServiceLocator;
+use Framework\Model\Connection;
 
 class Application
 {
@@ -15,7 +15,7 @@ class Application
     {
         $this->_config = require_once($config);
 
-        ServiceLocator::set('db', new \framework\Model\Connection($this->_config['pdo']));
+        ServiceLocator::set('db', new Connection($this->_config['pdo']));
 
 
     }

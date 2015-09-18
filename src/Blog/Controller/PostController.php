@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: dgilan
- * Date: 10/15/14
- * Time: 12:49 PM
- */
 
 namespace Blog\Controller;
 

@@ -5,7 +5,7 @@ class Loader
 {
     const DS = DIRECTORY_SEPARATOR;
 
-    static public $namespacePath = array();
+    static public $namespacePath = [];
 
     private $root;
 
@@ -18,17 +18,24 @@ class Loader
 
     public function autoload($className)
     {
-        $path = $this->root.self::DS.$className.'.php';
+        $path = $this->root.self::DS.lcfirst($className).'.php';
         $filePath = str_replace('\\', '/', $path);
 
         if(file_exists($filePath))
             include $filePath;
+        else
+        {
+            list($alias) = explode('\\', $className);
+            
+
+        }
 
     }
 
-    static public function addNamespacePath()
+    static public function addNamespacePath($alias, $path)
     {
-
+        self::$namespacePath[$alias] = $path;
+        print_r(self::$namespacePath);
     }
 
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace framework\Model;
+namespace Framework\Model;
 
 
 class Connection
@@ -22,6 +22,11 @@ class Connection
         {
             die('SQL CONNECTION ERROR');
         }
+    }
+
+    static public function getDb()
+    {
+
     }
 
 } 

@@ -6,7 +6,7 @@
  * Time: 17:21
  */
 
-namespace framework\DI;
+namespace Framework\DI;
 
 
 class ServiceLocator
