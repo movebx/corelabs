@@ -26,7 +26,7 @@ class Connection
 
     static public function getDb()
     {
-
+        return self::$_pdo_;
     }
 
-} 
+}
