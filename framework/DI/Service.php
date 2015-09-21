@@ -1,15 +1,10 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Codebuster
- * Date: 17.09.2015
- * Time: 17:21
- */
+
 
 namespace Framework\DI;
 
 
-class ServiceLocator
+class Service
 {
     static private $_container_ = [];
 

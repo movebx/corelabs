@@ -4,7 +4,7 @@
 namespace Framework;
 
 
-use Framework\DI\ServiceLocator;
+use Framework\DI\Service;
 use Framework\Model\Connection;
 use Framework\Router\Router;
 
@@ -17,13 +17,13 @@ class Application
         $this->_config = require_once($config);
 
         new Connection($this->_config['pdo']);
-        ServiceLocator::set('db', Connection::getDb());
-        ServiceLocator::set('router', new Router($this->_config['routes']));
+        Service::set('db', Connection::getDb());
+        Service::set('router', new Router($this->_config['routes']));
 
 
     }
     public function run()
     {
-
+        print_r($_SERVER);
     }
 } 

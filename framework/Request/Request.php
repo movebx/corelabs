@@ -6,6 +6,16 @@ namespace Framework\Request;
 
 class Request
 {
+    static public function getMethod()
+    {
+        return $_SERVER['REQUEST_METHOD'];
+    }
+
+    static public function getURI()
+    {
+        return $_SERVER['REQUEST_URI'];
+    }
+
    static public function getHost()
     {
         $host = '';
