@@ -3,6 +3,8 @@
 namespace Framework\Router;
 
 
+use Framework\DI\Service;
+
 class Router
 {
     private $routes;
@@ -10,6 +12,15 @@ class Router
     public function __construct($routes)
     {
         $this->routes = $routes;
+    }
+
+    public function getRoute()
+    {
+        $request = Service::get('request');
+        $uri = $request->getURI();
+
+
+
 
     }
 } 

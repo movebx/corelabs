@@ -14,21 +14,14 @@ class Request
     public function getFullUrl()
     {
         $fullUrl = self::getHost();
-        $fullUrl .= $_SERVER['REQUEST_URI'];
+        $fullUrl .= $this->getURI();
 
         return $fullUrl;
     }
 
     public function getURI()
     {
-        if(!empty($_SERVER['REQUEST_URI']))
-        {
-            return trim($_SERVER['REQUEST_URI'], '/');
-        }
-        elseif(!empty($_SERVER['QUERY_STRING']))
-        {
-            return trim($_SERVER['QUERY_STRING'], '/');
-        }
+            return trim($_SERVER['REQUEST_URI']);
     }
 
    static public function getHost()
