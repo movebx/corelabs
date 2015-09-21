@@ -6,14 +6,29 @@ namespace Framework\Request;
 
 class Request
 {
-    static public function getMethod()
+    public function getMethod()
     {
-        return $_SERVER['REQUEST_METHOD'];
+        return trim($_SERVER['REQUEST_METHOD']);
     }
 
-    static public function getURI()
+    public function getFullUrl()
     {
-        return $_SERVER['REQUEST_URI'];
+        $fullUrl = self::getHost();
+        $fullUrl .= $_SERVER['REQUEST_URI'];
+
+        return $fullUrl;
+    }
+
+    public function getURI()
+    {
+        if(!empty($_SERVER['REQUEST_URI']))
+        {
+            return trim($_SERVER['REQUEST_URI'], '/');
+        }
+        elseif(!empty($_SERVER['QUERY_STRING']))
+        {
+            return trim($_SERVER['QUERY_STRING'], '/');
+        }
     }
 
    static public function getHost()

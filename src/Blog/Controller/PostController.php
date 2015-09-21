@@ -4,10 +4,10 @@ namespace Blog\Controller;
 
 use Blog\Model\Post;
 use Framework\Controller\Controller;
-use Framework\DI\Service;
+//use Framework\DI\Service;
 use Framework\Exception\DatabaseException;
 use Framework\Exception\HttpNotFoundException;
-use Framework\Request\Request;
+//use Framework\Request\Request;
 use Framework\Response\Response;
 use Framework\Validation\Validator;
 
