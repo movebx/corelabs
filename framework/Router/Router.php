@@ -18,6 +18,15 @@ class Router
     {
         $request = Service::get('request');
         $uri = $request->getURI();
+        if($uri != '/')
+            rtrim($uri, '/');
+
+        foreach($this->routes as $route => $value)
+        {
+
+        }
+
+
 
 
 
