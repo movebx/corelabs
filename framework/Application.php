@@ -28,7 +28,9 @@ class Application
     {
         //print_r($_SERVER);
         $router = Service::get('router');
-        $route = $router->getRoute();
+        $route = $router->attemptToFindRoute();
+
+        //print_r($route);
 
     }
 } 

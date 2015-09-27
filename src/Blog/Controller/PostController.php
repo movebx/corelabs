@@ -43,7 +43,7 @@ class PostController extends Controller
                 }
             } catch(DatabaseException $e){
                 $error = $e->getMessage();
-            }
+        }
         }
 
         return $this->render(

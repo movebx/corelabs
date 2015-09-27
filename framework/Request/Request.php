@@ -6,6 +6,11 @@ namespace Framework\Request;
 
 class Request
 {
+    public function isPost()
+    {
+        return 'POST' == $this->getMethod();
+    }
+
     public function getMethod()
     {
         return trim($_SERVER['REQUEST_METHOD']);
