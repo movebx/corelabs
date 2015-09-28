@@ -6,6 +6,7 @@ namespace Framework\Exception;
 
 class HttpNotFoundException extends \Exception
 {
+
     public function show404page()
     {
         header('HTTP/1.1 404 Not Found');

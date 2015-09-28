@@ -13,7 +13,6 @@ use Framework\Validation\Validator;
 
 class PostController extends Controller
 {
-
     public function indexAction()
     {
         return $this->render('index.html', array('posts' => Post::find('all')));
@@ -43,7 +42,7 @@ class PostController extends Controller
                 }
             } catch(DatabaseException $e){
                 $error = $e->getMessage();
-        }
+                }
         }
 
         return $this->render(

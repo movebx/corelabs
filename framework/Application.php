@@ -41,13 +41,30 @@ class Application
         $route = $router->attemptToFindRoute();
 
 
+        try
+        {
+
+
+
+        }
+        catch(HttpNotFoundException $e)
+        {
+            $e->show404page();
+        }
+        catch(\Exception $e)
+        {
+
+        }
+
+
         //$logger = Service::get('logger');
         //$logger->log('Fuck da shit');
 
 
         //print_r($route);
-        //$test = new TestController();
-        //echo $test->generateRoute('add_post');
+
+        $test = new TestController();
+        echo $test->render('ok.html');
 
     }
 
