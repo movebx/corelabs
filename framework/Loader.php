@@ -1,6 +1,5 @@
 <?php
 
-
 class Loader
 {
     const DS = DIRECTORY_SEPARATOR;
@@ -67,5 +66,11 @@ class Loader
         //print_r(self::$namespacePaths);
     }
 
+    static public function init()
+    {
+        new Loader();
+        \Framework\Log\Logger::startScriptTime();
+
+    }
+
 }
-new Loader();

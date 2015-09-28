@@ -1,6 +1,6 @@
 <?php
 
-namespace Framework\Model;
+namespace Framework\Db;
 
 
 class Connection
@@ -15,8 +15,9 @@ class Connection
 
         try
         {
-            $pdo = new \PDO($dns, $user, $password);
-            self::$_pdo_ = $pdo;
+            self::$_pdo_ = new \PDO($dns, $user, $password);
+
+            register_shutdown_function([$this, 'closeConnection']);
         }
         catch (\PDOException $e)
         {
@@ -29,4 +30,8 @@ class Connection
         return self::$_pdo_;
     }
 
+    static public function closeConnection()
+    {
+        self::$_pdo_ = NULL;
+    }
 }

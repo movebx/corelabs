@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: dgilan
- * Date: 10/15/14
- * Time: 3:19 PM
- */
 
 namespace Blog\Controller;
 
@@ -22,4 +16,5 @@ class TestController extends Controller
     {
         return new JsonResponse(array('body' => 'Hello World'));
     }
+
 } 

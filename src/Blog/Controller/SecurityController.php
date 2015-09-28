@@ -25,7 +25,7 @@ class SecurityController extends Controller
                     Service::get('security')->setUser($user);
                     $returnUrl = Service::get('session')->returnUrl;
                     unset(Service::get('session')->returnUrl);
-                    return $this->redirect(!is_null($returnUrl)?$returnUrl:$this->generateRoute('home'));
+                    return $this->redirect(!is_null($returnUrl)? $returnUrl : $this->generateRoute('home'));
                 }
             }
 
@@ -43,7 +43,8 @@ class SecurityController extends Controller
 
     public function signinAction()
     {
-        if (Service::get('security')->isAuthenticated()) {
+        if (Service::get('security')->isAuthenticated())
+        {
             return new ResponseRedirect($this->generateRoute('home'));
         }
         $errors = array();
@@ -56,7 +57,9 @@ class SecurityController extends Controller
                 $user->role     = 'ROLE_USER';
                 $user->save();
                 return $this->redirect($this->generateRoute('home'));
-            } catch(DatabaseException $e){
+            }
+            catch(DatabaseException $e)
+            {
                 $errors = array($e->getMessage());
             }
         }
