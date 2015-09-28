@@ -18,17 +18,25 @@ class FileTarget implements iLogger
         $this->_logFile = $logs['address'];
     }
 
-    public function log($message, $level)
+    public function log($message, $level = 'NOTICE')
     {
         $datetime = '['.@date("d-m-Y H:i:s").']';
-        $queryTime = '[qtime:'.round(Logger::getScriptTime(), 4).']';
+        $queryTime = '[qt:'.round(Logger::getScriptTime(), 4).']:';
 
         if(!file_exists($this->_logFile))
             file_put_contents($this->_logFile, $this->getLogo());
 
+        $backtrace = debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS);
+        $line = $backtrace[1]['line'];
+        $file = $backtrace[1]['file'];
+        $type = $backtrace[1]['type'];
+        $func = $backtrace[1]['function'];
+
         $fopen = fopen($this->_logFile, 'a');
 
-        fwrite($fopen, $datetime.$queryTime.self::NEWLINE);
+        fwrite($fopen,
+               $datetime.$queryTime.self::NEWLINE.'['.$level.']'.$file.' in line '.$line.', function: '.@$type.@$func.'()'.self::NEWLINE.
+               '[MESSAGE]'.$message.self::NEWLINE.'----------------------------------------------------'.self::NEWLINE);
 
         fclose($fopen);
     }

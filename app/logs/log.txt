@@ -13,5 +13,7 @@
 
 
 
-[28-09-2015 02:49:25][qtime:0.032]
-[28-09-2015 02:50:09][qtime:0.091]
+[28-09-2015 13:07:07][qt:0.053]:
+[NOTICE]C:\xampp\htdocs\mindkFramework\web\index.php in line 7, function: ->run()
+[MESSAGE]Fuck da shit
+----------------------------------------------------

@@ -6,6 +6,7 @@ namespace Framework;
 use Blog\Controller\TestController;
 use Framework\DI\Service;
 use Framework\Db\Connection;
+use Framework\Exception\HttpNotFoundException;
 use Framework\Log\Logger;
 use Framework\Request\Request;
 use Framework\Router\Router;
@@ -39,8 +40,9 @@ class Application
 
         $route = $router->attemptToFindRoute();
 
-        $logger = Service::get('logger');
-        $logger->log('asfa', 'afaf');
+
+        //$logger = Service::get('logger');
+        //$logger->log('Fuck da shit');
 
 
         //print_r($route);
