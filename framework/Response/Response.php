@@ -12,6 +12,11 @@ class Response
     public $type;
     public $content;
 
+    public function __construct($content, $code = 200, $msg = 'OK', $type = 'html')
+    {
+
+    }
+
 
 
 } 
