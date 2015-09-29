@@ -4,8 +4,9 @@ return [
     'name'        => 'Blog',
     'basePath'    => realpath('../'),
     'mode'        => 'dev',
+    'charset'     => 'UTF-8',
     'routes'      => include('routes.php'),
-    'main_layout' => __DIR__.'/../../src/Blog/views/test_layout.html.php',
+    'main_layout' => __DIR__.'/../../src/Blog/views/layout.html.php',
     'error_500'   => __DIR__.'/../../src/Blog/views/500.html.php',
     'pdo'         =>
         [

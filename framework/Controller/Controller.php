@@ -4,9 +4,14 @@ namespace Framework\Controller;
 
  use Framework\DI\Service;
  use Framework\Renderer\Renderer;
+ use Framework\Response\Response;
 
  abstract class Controller
 {
+     final public function __construct()
+     {
+
+     }
      public function getRequest()
      {
         return Service::get('request');
@@ -21,10 +26,11 @@ namespace Framework\Controller;
 
      public function render($view, $data = [])
      {
-        $viewPath = $this->getViewPath($view);
-        $renderer = new Renderer($viewPath);
+         $viewPath = $this->getViewPath($view);
+         $renderer = new Renderer($viewPath, $data);
+         $content = $renderer->getContentBuffer();
 
-         return;
+         return new Response($content);
      }
 
      public function redirect()

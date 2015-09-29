@@ -11,17 +11,22 @@ class Renderer
     protected $data = [];
     protected $_layout;
     protected $error_500;
+    protected $content;
 
-    public function __construct($viewPath)
+    public function __construct($viewPath, $data)
     {
         $this->_layout = Service::getConfig('main_layout');
         $this->error_500 = Service::getConfig('error_500');
+
+        $this->data = array_merge($this->data, $data);
+
+        extract($data);
 
         if(file_exists($viewPath))
         {
             ob_start();
             include($viewPath);
-            $this->data['content'] = ob_get_clean();
+            $this->content = ob_get_clean();
         }
         else
         {
@@ -31,13 +36,15 @@ class Renderer
 
             ob_start();
             include($this->error_500);
-            $this->data['content'] = ob_get_clean();
+            $this->content = ob_get_clean();
         }
     }
 
     public function getContentBuffer()
     {
         extract($this->data);
+
+        $content = $this->content;
 
         ob_start();
         include($this->_layout);

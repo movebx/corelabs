@@ -15,5 +15,9 @@
 
 [28-09-2015 13:07:07][qt:0.053]:
 [NOTICE]C:\xampp\htdocs\mindkFramework\web\index.php in line 7, function: ->run()
-[MESSAGE]Fuck da shit
+[MESSAGE]
+----------------------------------------------------
+[29-09-2015 18:48:42][qt:0.026]:
+[FATAL]C:\xampp\htdocs\mindkFramework\web\index.php in line 7, function: ->run()
+[MESSAGE]Maybe it`s problem with incorrect routes
 ----------------------------------------------------

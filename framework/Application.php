@@ -7,6 +7,7 @@ use Blog\Controller\TestController;
 use Framework\DI\Service;
 use Framework\Db\Connection;
 use Framework\Exception\HttpNotFoundException;
+use Framework\Exception\ServerException;
 use Framework\Log\Logger;
 use Framework\Request\Request;
 use Framework\Router\Router;
@@ -36,20 +37,46 @@ class Application
     public function run()
     {
         //print_r($_SERVER);
+        $logger = Service::get('logger');
         $router = Service::get('router');
-
         $route = $router->attemptToFindRoute();
-
 
         try
         {
+            if(empty($route))
+                throw new HttpNotFoundException();
+            else
+            {
+                $controllerClass = $route['controller'];
+                if(!class_exists($controllerClass))
+                {
+                    $logger->log('Maybe it`s problem with incorrect routes', 'FATAL');
+                    throw new ServerException('CrAsHeD!!!! SERVER ERROR', 500);
+                }
+                $controller = new $controllerClass();
 
+                $action = $route['action'].'Action';
+                if(!method_exists($controller, $action))
+                {
+                    $logger->log('Maybe it`s problem with incorrect routes', 'FATAL');
+                    throw new ServerException('CrAsHeD!!!! SERVER ERROR', 500);
+                }
 
+                $reflMethod = new \ReflectionMethod($controllerClass, $action);
 
+                $response = $reflMethod->invokeArgs($controller,
+                    (isset($route['variables'])) ? $route['variables'] : []);
+
+                $response->send();
+            }
         }
         catch(HttpNotFoundException $e)
         {
             $e->show404page();
+        }
+        catch(ServerException $e)
+        {
+            $e->crashed();
         }
         catch(\Exception $e)
         {
@@ -58,14 +85,14 @@ class Application
 
 
         //$logger = Service::get('logger');
-        //$logger->log('Fuck da shit');
+        //$logger->log('suck');
 
 
         //print_r($route);
 
        // $test = new TestController();
-       // echo $test->render('ok.html');
-
+       // $response = $test->render('ok.html');
+       // $response->send();
     }
 
 } 

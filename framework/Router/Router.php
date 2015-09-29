@@ -39,8 +39,9 @@ class Router
 
                 $result = $this->routes[$route];
                 $result['name'] = $route;
+
                 if(!empty($match[1]))
-                    $result['variable'] = $match[1];
+                    $result['variables'] = [$match[1]];
                 return $result;
             }
         }
