@@ -4,6 +4,8 @@
 namespace Framework\DI;
 
 
+use Framework\Response\Response;
+
 class Service
 {
     static protected  $_container_ = [];
@@ -15,7 +17,15 @@ class Service
 
     static public function set($name, $object)
     {
-        self::$_container_[$name] = $object;
+        if(array_key_exists($name, self::$_container_))
+        {
+            $logger = self::get('logger');
+            $logger->log('Container key exists, name conflict', "WARNING");
+            (new Response('Name conflict, debug your app'))->send();
+        }
+        else
+            self::$_container_[$name] = $object;
+
     }
 
     static public function get($name)

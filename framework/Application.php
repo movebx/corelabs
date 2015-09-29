@@ -11,6 +11,7 @@ use Framework\Exception\ServerException;
 use Framework\Log\Logger;
 use Framework\Request\Request;
 use Framework\Router\Router;
+use Htmlpurifier\HtmlPurifierBuilder;
 
 class Application
 {
@@ -23,6 +24,8 @@ class Application
 
         $logger = new Logger($this->_config['log']);
         Service::set('logger', $logger->getLogger());
+
+        $this->_initComponents();
 
         new Connection($this->_config['pdo']);
         Service::set('db', Connection::getDb());
@@ -41,6 +44,7 @@ class Application
         $router = Service::get('router');
         $route = $router->attemptToFindRoute();
 
+        
         try
         {
             if(empty($route))
@@ -84,6 +88,15 @@ class Application
         }
 
 
+
+
+        /*
+        $htmlPurifierBuilder = new HtmlPurifierBuilder();
+        $purifier = $htmlPurifierBuilder->execute();
+        $purifier->delInvalidTags(true);
+        echo $purifier->purify('<script> awdasfasfafa</script>');
+        */
+
         //$logger = Service::get('logger');
         //$logger->log('suck');
 
@@ -93,6 +106,21 @@ class Application
        // $test = new TestController();
        // $response = $test->render('ok.html');
        // $response->send();
+    }
+
+    private function _initComponents()
+    {
+        $components = Service::getConfig('components');
+
+        foreach($components as $component)
+        {
+            \Loader::addNamespacePath($component['namespace'], $component['path']);
+            if(isset($component['bootstrap']) && $component['bootstrap'] === 'on')
+            {
+                $class = $component['class'];
+                Service::set($component['name'], new $class());
+            }
+        }
     }
 
 } 

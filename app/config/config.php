@@ -29,4 +29,15 @@ return [
             'loggers' => 'Framework\\Log\\Loggers',
 
         ],
+    'components' =>
+        [
+            'htmlpurifier' =>
+                [
+                    //'name' => 'htmlpurifier',
+                    'namespace' => 'Htmlpurifier\\',
+                    'path' => __DIR__.'/../vendor/Htmlpurifier',
+                    'class' => 'HtmlPurifierBuilder',
+                    //'bootstrap' => 'off'
+                ]
+        ]
     ];
