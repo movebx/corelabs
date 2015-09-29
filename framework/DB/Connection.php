@@ -21,7 +21,7 @@ class Connection
         }
         catch (\PDOException $e)
         {
-            die('SQL CONNECTION ERROR');
+            die('SQL CONNECTION ERROR');/////////////////
         }
     }
 

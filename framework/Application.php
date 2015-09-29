@@ -44,7 +44,7 @@ class Application
         $router = Service::get('router');
         $route = $router->attemptToFindRoute();
 
-        
+
         try
         {
             if(empty($route))
@@ -86,6 +86,14 @@ class Application
         {
 
         }
+
+
+
+
+
+
+        //$request = Service::get('request');
+        //echo $request->getFullUrl();
 
 
 

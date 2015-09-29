@@ -2,6 +2,7 @@
 
 namespace Framework\Request;
 
+use Htmlpurifier\HtmlPurifierBuilder;
 
 class Request
 {
@@ -53,14 +54,24 @@ class Request
 
     public function get($var)
     {
-        return array_key_exists($var, $_GET) ? $_GET[$var] : NULL;
+        if(array_key_exists($var, $_GET))
+            return $this->filter($_GET[$var]);
+        return NULL;
     }
 
     public function post($var)
     {
-        return array_key_exists($var, $_POST) ? $_POST[$var] : NULL;
+        if(array_key_exists($var, $_POST))
+            return $this->filter($_POST[$var]);
+        return NULL;
     }
 
-
+    public function filter($str)
+    {
+        $htmlPurifierBuilder = new HtmlPurifierBuilder();
+        $purifier = $htmlPurifierBuilder->execute();
+        //$purifier->delInvalidTags(true);
+        return $purifier->purify($str);
+    }
 
 } 

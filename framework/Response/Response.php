@@ -6,7 +6,7 @@ namespace Framework\Response;
 
 use Framework\DI\Service;
 
-class Response
+class Response implements iResponse
 {
     public $code;
     public $headers;

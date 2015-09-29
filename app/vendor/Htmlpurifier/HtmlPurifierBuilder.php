@@ -2,8 +2,6 @@
 
 namespace Htmlpurifier;
 
-use Htmlpurifier\HtmlPurifier;
-
 class HtmlPurifierBuilder
 {
     private $_tags;
