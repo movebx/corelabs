@@ -63,8 +63,8 @@ class Application
 
         //print_r($route);
 
-        $test = new TestController();
-        echo $test->render('ok.html');
+       // $test = new TestController();
+       // echo $test->render('ok.html');
 
     }
 

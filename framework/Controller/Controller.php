@@ -24,7 +24,7 @@ namespace Framework\Controller;
         $viewPath = $this->getViewPath($view);
         $renderer = new Renderer($viewPath);
 
-         return $renderer->getContentBuffer();
+         return;
      }
 
      public function redirect()
@@ -37,7 +37,15 @@ namespace Framework\Controller;
          $basePath = Service::getConfig('basePath');
          $name = Service::getConfig('name');
 
-         
+         //{
+         $currentNamespace = explode('\\', get_class($this));
+         $controllerName = str_replace('Controller', '', array_pop($currentNamespace));
+         $appName = array_shift($currentNamespace);
+
+         $path = $basePath.'\\src\\'.$appName.'\\views\\'.$controllerName.'\\'.$view.'.php';
+         //}Разбор работает хорошо, если структура приложения меняться не будет!!
+
+
 
          //$path = $basePath.'\\src\\'.str_replace(['Controller', '\\\\'], ['', '/'], get_class($this)).'\\'.$view.'.php';
 

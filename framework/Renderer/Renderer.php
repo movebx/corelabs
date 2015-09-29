@@ -17,8 +17,6 @@ class Renderer
         $this->_layout = Service::getConfig('main_layout');
         $this->error_500 = Service::getConfig('error_500');
 
-        echo $viewPath;
-
         if(file_exists($viewPath))
         {
             ob_start();
