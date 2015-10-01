@@ -4,6 +4,7 @@ namespace Framework\Controller;
 
  use Framework\DI\Service;
  use Framework\Renderer\Renderer;
+ use Framework\Request\Request;
  use Framework\Response\Response;
 
  abstract class Controller
@@ -21,7 +22,7 @@ namespace Framework\Controller;
      {
         $routes = Service::getConfig('routes');
 
-         return array_key_exists($name, $routes) ? $routes[$name]['pattern'] : NULL;
+         return array_key_exists($name, $routes) ? Request::getHost().$routes[$name]['pattern'] : NULL;
      }
 
      public function render($view, $data = [])

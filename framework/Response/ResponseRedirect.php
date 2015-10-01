@@ -11,10 +11,10 @@ class ResponseRedirect implements  iResponse
     public $url;
     public $replace;
 
-    public function __construct($uri, $replace = true, $code = 302)
+    public function __construct($url, $replace = true, $code = 302)
     {
 
-        $this->url = Request::getHost().$uri;
+        $this->url = $url;
         $this->code = $code;
         $this->replace = $replace;
     }

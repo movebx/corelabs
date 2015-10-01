@@ -4,6 +4,7 @@
 namespace Framework;
 
 use Blog\Controller\TestController;
+use Blog\Model\Post;
 use Framework\DI\Service;
 use Framework\Db\Connection;
 use Framework\Exception\HttpNotFoundException;
@@ -11,6 +12,8 @@ use Framework\Exception\ServerException;
 use Framework\Log\Logger;
 use Framework\Request\Request;
 use Framework\Router\Router;
+use Framework\Security\Security;
+use Framework\Session\Session;
 use Htmlpurifier\HtmlPurifierBuilder;
 
 class Application
@@ -19,6 +22,9 @@ class Application
 
     public function __construct($config)
     {
+        //if($config['mode'] === 'dev')
+
+
         $this->_config = require_once($config);
         Service::setConfig($this->_config);
 
@@ -29,6 +35,9 @@ class Application
 
         new Connection($this->_config['pdo']);
         Service::set('db', Connection::getDb());
+
+        Service::set('session', new Session());
+        Service::set('security', new Security());
         Service::set('router', new Router($this->_config['routes']));
         Service::set('request', new Request());
 
@@ -43,6 +52,7 @@ class Application
         $logger = Service::get('logger');
         $router = Service::get('router');
         $route = $router->attemptToFindRoute();
+
 
 
         try
@@ -92,6 +102,11 @@ class Application
 
 
 
+
+       // print_r(Post::find('all'));
+
+
+
         //$request = Service::get('request');
         //echo $request->getFullUrl();
 
@@ -112,6 +127,8 @@ class Application
         //print_r($route);
 
        // $test = new TestController();
+       // echo $test->generateRoute('add_post');
+
        // $response = $test->render('ok.html');
        // $response->send();
     }

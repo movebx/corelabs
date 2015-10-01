@@ -29,6 +29,7 @@ class SecurityController extends Controller
                 }
             }
 
+
             array_push($errors, 'Invalid username or password');
         }
 
@@ -43,6 +44,8 @@ class SecurityController extends Controller
 
     public function signinAction()
     {
+        print_r(Service::get('security')->isAuthenticated());
+
         if (Service::get('security')->isAuthenticated())
         {
             return new ResponseRedirect($this->generateRoute('home'));

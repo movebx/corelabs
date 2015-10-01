@@ -5,9 +5,12 @@ namespace Framework\Session;
 
 class Session
 {
+    public $returnUrl;
+
     public  function __construct()
     {
         //ini_set('session.gc_maxlifetime', 1800);
+        $this->start();
     }
 
     public function start()
@@ -15,7 +18,7 @@ class Session
         session_start();
     }
 
-    static public function destroy()
+    public function destroy()
     {
         session_destroy();
     }
@@ -30,7 +33,7 @@ class Session
         return session_name();
     }
 
-    static public function unsetSession($var)
+    public function unsetSession($var)
     {
         if(isset($_SESSION[$var]))
         {
@@ -40,14 +43,14 @@ class Session
         return false;
     }
 
-    public static function set($name, $value)
+    public function set($name, $value)
     {
         $_SESSION[$name] = $value;
     }
 
-    public static function get($name)
+    public function get($name)
     {
-        return empty($_SESSION[$name]) ? null : $_SESSION[$name];
+        return empty($_SESSION[$name]) ? NULL : $_SESSION[$name];
     }
 
 } 
