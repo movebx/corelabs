@@ -26,7 +26,7 @@ abstract class ActiveRecord
         $stmt = $db->prepare($query);
         $stmt->execute([':id' => $id]);
 
-        $result = $stmt->fetchAll(\PDO::FETCH_OBJ);
+        $result = ($id == 'all') ? $stmt->fetchAll(\PDO::FETCH_OBJ) : $stmt->fetch(\PDO::FETCH_OBJ);
 
         return $result;
     }
@@ -39,7 +39,8 @@ abstract class ActiveRecord
 
         $stmt = $db->prepare($query);
         $stmt->execute([':email' => $email]);
-        $result = $stmt->fetchAll(\PDO::FETCH_OBJ);
+
+        $result = $stmt->fetch(\PDO::FETCH_OBJ);
 
         return $result;
     }
@@ -47,6 +48,11 @@ abstract class ActiveRecord
     static public function getTable()
     {
 
+    }
+
+    public function getRules()
+    {
+        return [];
     }
 
 } 

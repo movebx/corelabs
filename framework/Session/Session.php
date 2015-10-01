@@ -10,6 +10,7 @@ class Session
     public  function __construct()
     {
         //ini_set('session.gc_maxlifetime', 1800);
+        //@TODO: RETURNUrl DESCRIBE BELOW!!!!!!!!!!!!!!!
         $this->start();
     }
 

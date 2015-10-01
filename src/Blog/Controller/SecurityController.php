@@ -29,7 +29,6 @@ class SecurityController extends Controller
                 }
             }
 
-
             array_push($errors, 'Invalid username or password');
         }
 
@@ -44,7 +43,7 @@ class SecurityController extends Controller
 
     public function signinAction()
     {
-        print_r(Service::get('security')->isAuthenticated());
+        //print_r(Service::get('security')->isAuthenticated());
 
         if (Service::get('security')->isAuthenticated())
         {
@@ -57,7 +56,7 @@ class SecurityController extends Controller
                 $user           = new User();
                 $user->email    = $this->getRequest()->post('email');
                 $user->password = $this->getRequest()->post('password');
-                $user->role     = 'ROLE_USER';
+                $user->role     = 'anonymous';
                 $user->save();
                 return $this->redirect($this->generateRoute('home'));
             }

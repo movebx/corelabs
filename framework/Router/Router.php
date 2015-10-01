@@ -9,6 +9,8 @@ class Router
 {
     const DLMTR = '~';
 
+    static public $currentRoute;
+
     private $routes;
 
     public function __construct($routes)
@@ -39,9 +41,10 @@ class Router
 
                 $result = $this->routes[$route];
                 $result['name'] = $route;
-
                 if(!empty($match[1]))
                     $result['variables'] = [$match[1]];
+                
+                self::$currentRoute = $result;
                 return $result;
             }
         }

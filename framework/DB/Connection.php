@@ -3,6 +3,8 @@
 namespace Framework\Db;
 
 
+use Framework\DI\Service;
+
 class Connection
 {
     static private $_pdo_;
@@ -21,7 +23,9 @@ class Connection
         }
         catch (\PDOException $e)
         {
-            die('SQL CONNECTION ERROR');/////////////////
+            $logger = Service::get('logger');
+            $logger->log($e->getMessage(), 'WARNING');
+            die('SQL CONNECTION ERROR: '.$e->getMessage());
         }
     }
 

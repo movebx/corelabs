@@ -6,6 +6,7 @@ namespace Framework\Controller;
  use Framework\Renderer\Renderer;
  use Framework\Request\Request;
  use Framework\Response\Response;
+ use Framework\Response\ResponseRedirect;
 
  abstract class Controller
 {
@@ -34,9 +35,11 @@ namespace Framework\Controller;
          return new Response($content);
      }
 
-     public function redirect()
+     public function redirect($url, $msg = '')
      {
+        //@TODO: msg describe below
 
+         return new ResponseRedirect($url);
      }
 
      protected function getViewPath($view)
