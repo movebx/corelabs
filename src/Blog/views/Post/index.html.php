@@ -13,7 +13,7 @@
 
     <?php } ?>
 
-    <div>
+    <div id="include">
         <?php $include('Blog\\Controller\\PostController', 'getPost', array('id' => 'TestId')) ?>
     </div>
 

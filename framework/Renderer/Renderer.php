@@ -31,9 +31,11 @@ class Renderer
 
         $route = Router::$currentRoute;
         $getRoute = $this->getRouteClosure();
-        $generateToken = function(){};//@TODO: describe below!
-        $include = function(){};
         $user = Service::get('security')->getUser();
+        $include = $this->getIncludeClosure();
+
+        $generateToken = $this->getGenerateTokenClosure();//@TODO: describe below!
+        $flush = [];//@TODO: describe below!
 
 
 
@@ -76,6 +78,33 @@ class Renderer
                 }
 
             return '';
+        };
+    }
+
+    public function getIncludeClosure()
+    {
+        return function($controllerClass, $method, $params = [])
+        {
+            if(!class_exists($controllerClass))
+                return;
+            $class = new $controllerClass();
+
+            $method .= 'Action';
+            if(!method_exists($class, $method))
+                return;
+
+            $reflMethod = new \ReflectionMethod($controllerClass, $method);
+
+            $response = $reflMethod->invokeArgs($class, $params);
+            $response->paste();
+        };
+    }
+
+    public function getGenerateTokenClosure()
+    {
+        return function()
+        {
+
         };
     }
 } 

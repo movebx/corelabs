@@ -177,9 +177,11 @@ class HtmlPurifier
 			//Закрываем оставшиеся в стеке тэги
 			foreach(array_reverse($open_tags_stack) as $value)
             {
-				array_push($seg, array('seg_type'=>'tag', 'tag_type'=>'close', 'tag_name'=>$value, 'action'=>'add'));
+				array_push($seg, ['action' => 'add'], ['seg_type' => 'tag'], ['tag_type' => 'close'], ['tag_name' => $value]);
+                //array_push($seg, ['action' => 'add']);
 			}
-			
+
+            //print_r($seg);
 			//Собираем профильтрованный код и возвращаем его
 			$filtered_HTML = '';
 			foreach($seg as $segment)
@@ -187,7 +189,7 @@ class HtmlPurifier
 				if($segment['seg_type'] == 'text')
                     $filtered_HTML .= $segment['value'];
 				
-				elseif(($segment['seg_type'] == 'tag') && ($segment['action'] != 'del'))
+				elseif(($segment['seg_type'] == 'tag') && !$this->del_tags/*($segment['action'] != 'del')*/)
                 {
 					if($segment['tag_type'] == 'open')
                     {

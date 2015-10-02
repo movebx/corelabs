@@ -11,6 +11,7 @@ use Framework\Exception\HttpNotFoundException;
 use Framework\Response\Response;
 use Framework\Validation\Validator;
 
+
 class PostController extends Controller
 {
     public function indexAction()

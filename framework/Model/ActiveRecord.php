@@ -9,9 +9,14 @@ abstract class ActiveRecord
 {
     protected $db;
 
+    public $rules;
+
     public function __construct()
     {
         $this->db = Service::get('db');
+
+        $this->rules = $this->getRules();
+
     }
 
     static public function find($id)

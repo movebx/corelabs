@@ -52,4 +52,9 @@ class Response implements iResponse
         exit();
     }
 
+    public function paste()
+    {
+        echo $this->content;
+    }
+
 } 
