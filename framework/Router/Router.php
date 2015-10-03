@@ -4,6 +4,8 @@ namespace Framework\Router;
 
 
 use Framework\DI\Service;
+use Framework\Request\Request;
+use Framework\Response\ResponseRedirect;
 
 class Router
 {
@@ -26,18 +28,67 @@ class Router
             rtrim($uri, '/');
 
         $result = NULL;
+
+
+
+
+
         foreach($this->routes as $route => $rContent)
         {
             $requirements = isset($rContent["_requirements"]) ? $rContent["_requirements"] : NULL;
 
+
+
+
             $pattern = preg_replace('~\{\w+\}~',
                 isset($requirements["id"]) ? '('.$requirements["id"].')' : '([\w\d]+)',
                 $rContent['pattern']);
+            //можно написать чтоб парсило параметры в requirements и подставляло автоматически (c)лень
+
+
+
+
 
             if(preg_match(self::DLMTR."^".$pattern."$".self::DLMTR, $uri, $match))
             {
                 if(isset($requirements["_method"]) && $requirements["_method"] !== $request->getMethod())
                     return false;
+
+
+
+
+
+
+                if(isset($rContent['security']))
+                {
+                    $routeSecurity = $rContent['security'];
+                    $security = Service::get('security');
+
+                    $c = 0;
+                    for ( ; ; )
+                    {
+                        if ($c > count($routeSecurity) - 1)
+                        {
+                            break;
+                        }
+                        switch($routeSecurity[$c])
+                        {
+                            case 'ROLE_USER':
+                                $user = $security->getUser();
+                                if(is_null($user))
+                                {
+                                    $host = Request::getHost();
+                                    $response = new ResponseRedirect($host.$security->loginRoute);
+                                    $response->send();
+                                }
+                                break;
+                            //continue security
+                        }
+                        ++$c;
+                    }
+                }
+
+
 
                 $result = $this->routes[$route];
                 $result['name'] = $route;
@@ -48,7 +99,5 @@ class Router
                 return $result;
             }
         }
-
-        //@TODO::SECURITY!
     }
 } 

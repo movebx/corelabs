@@ -44,7 +44,7 @@ class Validator
         }
 
 
-        return ($this->errors == NULL) ? true : false;
+        return ($this->errors == NULL);
     }
 
     public function getErrors()

@@ -59,6 +59,11 @@ class Request
         return NULL;
     }
 
+    static public function getReferrer()
+    {
+        return isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : NULL;
+    }
+
     public function post($var)
     {
         if(array_key_exists($var, $_POST))

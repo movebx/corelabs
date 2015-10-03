@@ -12,7 +12,6 @@ use Framework\Exception\ServerException;
 use Framework\Log\Logger;
 use Framework\Request\Request;
 use Framework\Router\Router;
-use Framework\Security\Security;
 use Framework\Session\Session;
 use Htmlpurifier\HtmlPurifierBuilder;
 
@@ -37,10 +36,13 @@ class Application
         Service::set('db', Connection::getDb());
 
         Service::set('session', new Session());
-        Service::set('security', new Security());
+
+        $securityConf = Service::getConfig('security');
+        $securityClass = $securityConf['user_class'];
+        Service::set('security', new $securityClass());
+
         Service::set('router', new Router($this->_config['routes']));
         Service::set('request', new Request());
-
 
 
         Service::set('app', $this);

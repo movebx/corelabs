@@ -17,7 +17,7 @@ return [
     'security'    =>
         [
             'user_class'  => 'Blog\\Model\\User',
-            'login_route' => 'login'
+            'login_route' => '/login'
         ],
     'log' =>
         [

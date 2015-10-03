@@ -45,9 +45,7 @@ class Post extends ActiveRecord
         $security = Service::get('security');
 
         $user = $security->getUser();
-        $userId = is_null($user) ? 5 : $user->id;
-
-
+        $userId = $user->id;
 
         $query = 'INSERT INTO '.self::getTable().'(title, content, date, user) VALUES (:title, :content, :date, :user)';
 

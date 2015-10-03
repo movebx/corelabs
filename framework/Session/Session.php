@@ -3,6 +3,8 @@
 namespace Framework\Session;
 
 
+use Framework\DI\Service;
+
 class Session
 {
     public $returnUrl;
@@ -10,8 +12,12 @@ class Session
     public  function __construct()
     {
         //ini_set('session.gc_maxlifetime', 1800);
-        //@TODO: RETURNUrl DESCRIBE BELOW!!!!!!!!!!!!!!!
         $this->start();
+
+        //$this->returnUrl = $this->getReferrer();
+
+        //$logger = Service::get('logger');
+        //$logger->log($this->returnUrl);
     }
 
     public function start()

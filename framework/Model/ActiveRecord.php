@@ -9,13 +9,11 @@ abstract class ActiveRecord
 {
     protected $db;
 
-    public $rules;
 
     public function __construct()
     {
-        $this->db = Service::get('db');
+        //$this->db = Service::get('db');
 
-        $this->rules = $this->getRules();
 
     }
 
