@@ -12,7 +12,7 @@ abstract class ActiveRecord
 
     public function __construct()
     {
-        //$this->db = Service::get('db');
+        $this->db = Service::get('db');
 
 
     }

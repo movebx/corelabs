@@ -69,7 +69,7 @@ $activeIfRoute = function ($item) use (&$route) {
     <div class="row">
         <?php foreach($flush as $type => $msgs) {
             foreach($msgs as $msg) {?>
-            <div class="alert alert-<?php echo $type === 'error'? 'danger' : $type?> alert-dismissible" role="alert">
+            <div class="alert alert-<?php echo $type === 'error'? 'danger' : $type ?> alert-dismissible" role="alert">
                 <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span
                         class="sr-only">Close</span></button>
                 <?php echo $msg; ?>

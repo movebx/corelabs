@@ -7,6 +7,7 @@ use Blog\Controller\TestController;
 use Blog\Model\Post;
 use Framework\DI\Service;
 use Framework\Db\Connection;
+use Framework\Exception\DatabaseException;
 use Framework\Exception\HttpNotFoundException;
 use Framework\Exception\ServerException;
 use Framework\Log\Logger;
@@ -96,6 +97,10 @@ class Application
         catch(ServerException $e)
         {
             $e->crashed();
+        }
+        catch(DatabaseException $e)
+        {
+            die('Database error: '.$e->getMessage());
         }
         catch(\Exception $e)
         {

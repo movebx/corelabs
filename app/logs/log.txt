@@ -29,3 +29,4 @@
 [NOTICE]C:\xampp\htdocs\mindkFramework\web\index.php in line 8, function: ->run()
 [MESSAGE]profile
 ----------------------------------------------------
+
