@@ -18,7 +18,7 @@ class Validator
     {
         if($obj instanceof ActiveRecord)
         {
-            $this->rules = $obj->rules;
+            $this->rules = $obj->getRules();
             $this->objVars = get_object_vars($obj);
         }
         else

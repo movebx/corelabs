@@ -21,11 +21,14 @@ class Application
 
     public function __construct($config)
     {
-        //if($config['mode'] === 'dev')
-
-
         $this->_config = require_once($config);
         Service::setConfig($this->_config);
+        if($this->_config['mode'] !== 'dev')
+        {
+            error_reporting(0);
+            ini_set('display_errors', '0');
+        }
+
 
         $logger = new Logger($this->_config['log']);
         Service::set('logger', $logger->getLogger());

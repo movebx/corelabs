@@ -13,7 +13,7 @@ $activeIfRoute = function ($item) use (&$route) {
     <meta charset="UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <link href="/images/system/favicon.ico.png" rel="shortcut icon" type="image/x-icon" />
 
     <link href="/css/bootstrap.min.css" type="text/css" rel="stylesheet"/>
     <link href="/css/bootstrap-theme.min.css" type="text/css" rel="stylesheet"/>

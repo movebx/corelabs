@@ -21,59 +21,11 @@
 [FATAL]C:\xampp\htdocs\mindkFramework\web\index.php in line 7, function: ->run()
 [MESSAGE]Maybe it`s problem with incorrect routes
 ----------------------------------------------------
-[03-10-2015 11:46:53][qt:0.037]:
-[NOTICE]C:\xampp\htdocs\mindkFramework\framework\Application.php in line 86, function: ->send()
-[MESSAGE]Array
+[04-10-2015 12:17:48][qt:0.042]:
+[NOTICE]C:\xampp\htdocs\mindkFramework\framework\Application.php in line 56, function: ->attemptToFindRoute()
+[MESSAGE]ok 106 preg
 ----------------------------------------------------
-[03-10-2015 11:46:55][qt:0.011]:
-[NOTICE]C:\xampp\htdocs\mindkFramework\framework\Router\Router.php in line 82, function: ->send()
-[MESSAGE]
-----------------------------------------------------
-[03-10-2015 11:47:00][qt:0.018]:
-[NOTICE]C:\xampp\htdocs\mindkFramework\framework\Application.php in line 86, function: ->send()
-[MESSAGE]Array
-----------------------------------------------------
-[03-10-2015 11:47:00][qt:0.019]:
-[NOTICE]C:\xampp\htdocs\mindkFramework\framework\Application.php in line 86, function: ->send()
-[MESSAGE]Array
-----------------------------------------------------
-[03-10-2015 12:07:35][qt:0.011]:
-[NOTICE]C:\xampp\htdocs\mindkFramework\framework\Application.php in line 38, function: ->__construct()
-[MESSAGE]http://cppthebest.no-ip.biz/login
-----------------------------------------------------
-[03-10-2015 12:07:35][qt:0.015]:
-[NOTICE]C:\xampp\htdocs\mindkFramework\framework\Application.php in line 38, function: ->__construct()
-[MESSAGE]http://cppthebest.no-ip.biz/login
-----------------------------------------------------
-[03-10-2015 12:07:35][qt:0.015]:
-[NOTICE]C:\xampp\htdocs\mindkFramework\framework\Application.php in line 38, function: ->__construct()
-[MESSAGE]http://cppthebest.no-ip.biz/login
-----------------------------------------------------
-[03-10-2015 12:08:04][qt:0.005]:
-[NOTICE]C:\xampp\htdocs\mindkFramework\framework\Application.php in line 38, function: ->__construct()
-[MESSAGE]
-----------------------------------------------------
-[03-10-2015 12:08:04][qt:0.004]:
-[NOTICE]C:\xampp\htdocs\mindkFramework\framework\Application.php in line 38, function: ->__construct()
-[MESSAGE]
-----------------------------------------------------
-[03-10-2015 12:18:41][qt:0.016]:
-[NOTICE]C:\xampp\htdocs\mindkFramework\framework\Application.php in line 38, function: ->__construct()
-[MESSAGE]http://cppthebest.no-ip.biz/
-----------------------------------------------------
-[03-10-2015 12:18:41][qt:0.014]:
-[NOTICE]C:\xampp\htdocs\mindkFramework\framework\Application.php in line 38, function: ->__construct()
-[MESSAGE]http://cppthebest.no-ip.biz/
-----------------------------------------------------
-[03-10-2015 12:18:46][qt:0.023]:
-[NOTICE]C:\xampp\htdocs\mindkFramework\framework\Application.php in line 38, function: ->__construct()
-[MESSAGE]http://cppthebest.no-ip.biz/login
-----------------------------------------------------
-[03-10-2015 12:18:46][qt:0.005]:
-[NOTICE]C:\xampp\htdocs\mindkFramework\framework\Application.php in line 38, function: ->__construct()
-[MESSAGE]http://cppthebest.no-ip.biz/login
-----------------------------------------------------
-[03-10-2015 12:18:46][qt:0.004]:
-[NOTICE]C:\xampp\htdocs\mindkFramework\framework\Application.php in line 38, function: ->__construct()
-[MESSAGE]http://cppthebest.no-ip.biz/login
+[04-10-2015 12:17:48][qt:0.043]:
+[NOTICE]C:\xampp\htdocs\mindkFramework\web\index.php in line 8, function: ->run()
+[MESSAGE]profile
 ----------------------------------------------------

@@ -32,12 +32,9 @@ class Router
 
 
 
-
         foreach($this->routes as $route => $rContent)
         {
             $requirements = isset($rContent["_requirements"]) ? $rContent["_requirements"] : NULL;
-
-
 
 
             $pattern = preg_replace('~\{\w+\}~',
@@ -49,11 +46,11 @@ class Router
 
 
 
-            if(preg_match(self::DLMTR."^".$pattern."$".self::DLMTR, $uri, $match))
+            if(preg_match(self::DLMTR."^".$pattern."$".self::DLMTR, $uri, $match) && isset($requirements["_method"]))
             {
-                if(isset($requirements["_method"]) && $requirements["_method"] !== $request->getMethod())
-                    return false;
 
+                if($requirements["_method"] !== $request->getMethod())
+                    continue;
 
 
 
@@ -78,8 +75,8 @@ class Router
                                 if(is_null($user))
                                 {
                                     $host = Request::getHost();
-                                    $response = new ResponseRedirect($host.$security->loginRoute);
-                                    $response->send();
+                                    $redirect = new ResponseRedirect($host.$security->loginRoute);
+                                    $redirect->send();
                                 }
                                 break;
                             //continue security
@@ -98,6 +95,53 @@ class Router
                 self::$currentRoute = $result;
                 return $result;
             }
+
+            if(preg_match(self::DLMTR."^".$pattern."$".self::DLMTR, $uri, $match))
+            {
+
+
+
+
+                if(isset($rContent['security']))
+                {
+                    $routeSecurity = $rContent['security'];
+                    $security = Service::get('security');
+
+                    $c = 0;
+                    for ( ; ; )
+                    {
+                        if ($c > count($routeSecurity) - 1)
+                        {
+                            break;
+                        }
+                        switch($routeSecurity[$c])
+                        {
+                            case 'ROLE_USER':
+                                $user = $security->getUser();
+                                if(is_null($user))
+                                {
+                                    $host = Request::getHost();
+                                    $redirect = new ResponseRedirect($host.$security->loginRoute);
+                                    $redirect->send();
+                                }
+                                break;
+                            //continue security
+                        }
+                        ++$c;
+                    }
+                }
+
+
+
+                $result = $this->routes[$route];
+                $result['name'] = $route;
+                if(!empty($match[1]))
+                    $result['variables'] = [$match[1]];
+
+                self::$currentRoute = $result;
+                return $result;
+            }
+
         }
     }
 } 

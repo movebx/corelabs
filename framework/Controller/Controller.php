@@ -29,6 +29,7 @@ namespace Framework\Controller;
      public function render($view, $data = [])
      {
          $viewPath = $this->getViewPath($view);
+         //Service::get('logger')->log($viewPath);
          $renderer = new Renderer($viewPath, $data);
          $content = $renderer->getContentBuffer();
 
