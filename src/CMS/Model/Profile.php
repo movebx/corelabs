@@ -22,7 +22,7 @@ class Profile extends ActiveRecord
     public function getRules()
     {
         return [
-                'name' =>[new Length(4, 10)],
+                'name' =>[new Length(4, 15)],
                 'email' => [new Length(5)],
                 'password' => [new Length(4, 10)]
         ];
