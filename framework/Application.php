@@ -59,6 +59,8 @@ class Application
         $router = Service::get('router');
         $route = $router->attemptToFindRoute();
 
+Service::get('logger')->log(Service::get('security')->getUserIp());
+
 
 
         try

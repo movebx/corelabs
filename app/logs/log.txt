@@ -30,3 +30,71 @@
 [MESSAGE]profile
 ----------------------------------------------------
 
+[05-10-2015 12:42:49][qt:0.093]:
+[NOTICE]C:\xampp\htdocs\mindkFramework\web\index.php in line 8, function: ->run()
+[MESSAGE]93.79.32.71
+----------------------------------------------------
+[05-10-2015 12:53:39][qt:0.091]:
+[NOTICE]C:\xampp\htdocs\mindkFramework\web\index.php in line 8, function: ->run()
+[MESSAGE]66.249.67.8
+----------------------------------------------------
+[05-10-2015 14:09:26][qt:0.02]:
+[NOTICE]C:\xampp\htdocs\mindkFramework\web\index.php in line 8, function: ->run()
+[MESSAGE]66.249.78.85
+----------------------------------------------------
+[05-10-2015 15:46:52][qt:0.027]:
+[NOTICE]C:\xampp\htdocs\mindkFramework\web\index.php in line 8, function: ->run()
+[MESSAGE]66.249.73.220
+----------------------------------------------------
+[05-10-2015 15:46:53][qt:0.031]:
+[NOTICE]C:\xampp\htdocs\mindkFramework\web\index.php in line 8, function: ->run()
+[MESSAGE]66.249.73.220
+----------------------------------------------------
+[05-10-2015 16:11:19][qt:0.071]:
+[NOTICE]C:\xampp\htdocs\mindkFramework\web\index.php in line 8, function: ->run()
+[MESSAGE]107.170.193.184
+----------------------------------------------------
+[05-10-2015 16:40:59][qt:0.021]:
+[NOTICE]C:\xampp\htdocs\mindkFramework\web\index.php in line 8, function: ->run()
+[MESSAGE]66.249.73.228
+----------------------------------------------------
+[05-10-2015 17:49:33][qt:0.078]:
+[NOTICE]C:\xampp\htdocs\mindkFramework\web\index.php in line 8, function: ->run()
+[MESSAGE]82.118.237.106
+----------------------------------------------------
+[05-10-2015 17:56:47][qt:0.09]:
+[NOTICE]C:\xampp\htdocs\mindkFramework\web\index.php in line 8, function: ->run()
+[MESSAGE]66.249.73.220
+----------------------------------------------------
+[05-10-2015 19:09:07][qt:0.048]:
+[NOTICE]C:\xampp\htdocs\mindkFramework\web\index.php in line 8, function: ->run()
+[MESSAGE]::1
+----------------------------------------------------
+[05-10-2015 19:12:34][qt:0.021]:
+[NOTICE]C:\xampp\htdocs\mindkFramework\web\index.php in line 8, function: ->run()
+[MESSAGE]66.249.73.228
+----------------------------------------------------
+[05-10-2015 19:12:56][qt:0.089]:
+[NOTICE]C:\xampp\htdocs\mindkFramework\web\index.php in line 8, function: ->run()
+[MESSAGE]93.79.32.71
+----------------------------------------------------
+[05-10-2015 19:12:58][qt:0.015]:
+[NOTICE]C:\xampp\htdocs\mindkFramework\web\index.php in line 8, function: ->run()
+[MESSAGE]93.79.32.71
+----------------------------------------------------
+[05-10-2015 19:13:13][qt:0.024]:
+[NOTICE]C:\xampp\htdocs\mindkFramework\web\index.php in line 8, function: ->run()
+[MESSAGE]93.79.32.71
+----------------------------------------------------
+[05-10-2015 19:13:13][qt:0.166]:
+[NOTICE]C:\xampp\htdocs\mindkFramework\web\index.php in line 8, function: ->run()
+[MESSAGE]93.79.32.71
+----------------------------------------------------
+[05-10-2015 19:13:22][qt:0.012]:
+[NOTICE]C:\xampp\htdocs\mindkFramework\web\index.php in line 8, function: ->run()
+[MESSAGE]93.79.32.71
+----------------------------------------------------
+[05-10-2015 19:13:22][qt:0.017]:
+[NOTICE]C:\xampp\htdocs\mindkFramework\web\index.php in line 8, function: ->run()
+[MESSAGE]93.79.32.71
+----------------------------------------------------
