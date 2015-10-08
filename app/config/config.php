@@ -16,7 +16,7 @@ return [
         ],
     'security'    =>
         [
-            'user_class'  => 'Blog\\Model\\User',
+            'user_class'  => 'Framework\\Security\\User',
             'login_route' => '/login'
         ],
     'log' =>

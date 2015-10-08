@@ -60,4 +60,28 @@ class Session
         return empty($_SESSION[$name]) ? NULL : $_SESSION[$name];
     }
 
+    public function setFlushMsg($type, $msg)
+    {
+        $msgsInSess = $this->get('flush');
+
+        $msgsInSess[$type][] = $msg;
+
+        $this->set('flush', $msgsInSess);
+
+    }
+
+    public function getFlushMsgs()
+    {
+        $flushMsgs = $this->get('flush');
+
+        if($flushMsgs === NULL)
+            $flushMsgs = [];
+        else
+        {
+            $this->unsetSession('flush');
+        }
+
+        return $flushMsgs;
+    }
+
 } 

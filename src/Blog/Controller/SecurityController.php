@@ -56,7 +56,7 @@ class SecurityController extends Controller
                 $user           = new User();
                 $user->email    = $this->getRequest()->post('email');
                 $user->password = $this->getRequest()->post('password');
-                $user->role     = 'anonymous';
+                $user->role     = 'ROLE_USER';
                 $user->save();
                 return $this->redirect($this->generateRoute('home'));
             }

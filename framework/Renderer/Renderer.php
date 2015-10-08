@@ -33,9 +33,12 @@ class Renderer
         $getRoute = $this->getRouteClosure();
         $user = Service::get('security')->getUser();
         $include = $this->getIncludeClosure();
+        $flush = Service::get('session')->getFlushMsgs();
 
         $generateToken = $this->getGenerateTokenClosure();//@TODO: describe below!
-        $flush = [];//@TODO: describe below!
+
+
+
 
 
 

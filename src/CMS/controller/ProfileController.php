@@ -23,6 +23,7 @@ class ProfileController extends Controller
             $password = $user->password;
             $ip = Service::get('security')->getUserIp();
 
+
             return $this->render('profile', ['action' => $this->generateRoute('update_profile'), 'id' => $id,
                 'name' => $name, 'email' => $email, 'password' => $password , 'ip' => $ip]);
         }

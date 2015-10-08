@@ -3,8 +3,8 @@
 
 namespace Framework;
 
-use Blog\Controller\TestController;
-use Blog\Model\Post;
+//use Blog\Controller\TestController;
+//use Blog\Model\Post;
 use Framework\DI\Service;
 use Framework\Db\Connection;
 use Framework\Exception\DatabaseException;
@@ -14,7 +14,7 @@ use Framework\Log\Logger;
 use Framework\Request\Request;
 use Framework\Router\Router;
 use Framework\Session\Session;
-use Htmlpurifier\HtmlPurifierBuilder;
+//use Htmlpurifier\HtmlPurifierBuilder;
 
 class Application
 {
@@ -59,7 +59,7 @@ class Application
         $router = Service::get('router');
         $route = $router->attemptToFindRoute();
 
-Service::get('logger')->log(Service::get('security')->getUserIp());
+//Service::get('logger')->log(Service::get('security')->getUserIp());
 
 
 

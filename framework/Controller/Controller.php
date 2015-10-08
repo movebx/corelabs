@@ -36,9 +36,13 @@ namespace Framework\Controller;
          return new Response($content);
      }
 
-     public function redirect($url, $msg = '')
+     public function redirect($url, $msg = '', $type = '')
      {
-        //@TODO: msg describe below
+        if(($msg != '') || ($type != ''))
+        {
+            $type = ($type == '') ? 'success' : '';
+            Service::get('session')->setFlushMsg($type, $msg);
+        }
 
          return new ResponseRedirect($url);
      }
