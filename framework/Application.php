@@ -67,7 +67,6 @@ class Application
         //print_r($route);
 
 
-        //echo Service::getRootPath().DIRECTORY_SEPARATOR;
 
 
         try

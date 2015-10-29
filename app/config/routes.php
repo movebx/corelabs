@@ -13,6 +13,16 @@ return array(
             'controller' => 'CMS\\Controller\\AdminController',
             'action'     => 'login'
         ],
+    'admin_add_image' =>
+        [
+            'pattern'    => '/image/add',
+            'controller' => 'CMS\\Controller\\AdminController',
+            'action'     => 'image',
+            '_requirements' =>
+            [
+                '_method' => 'POST'
+            ]
+        ],
     'admin' =>
         [
             'pattern'    => '/admin',

@@ -17,8 +17,8 @@
 define( 'ERROR_CANT_OPEN_FILE',     'Error. Can\'t open file: ' );
 define( 'ERROR_CANT_CLOSE_FILE',    'Error. Can\'t close file: ' );
 define( 'ERROR_FILE_PARAM_EX',      'Error. Appender config with type file, must has parameter filepath' );
-define( 'ERROR_FILE_EX',            'Error. File or path does not exist and script can not create new file. File path: ' );
-define( 'ERROR_PERMISSION_DENIED',  'Error. Permission denied. File does not writeble: ' );
+define( 'ERROR_FILE_EX',            'Error. Files or path does not exist and script can not create new file. Files path: ' );
+define( 'ERROR_PERMISSION_DENIED',  'Error. Permission denied. Files does not writeble: ' );
 define( 'ERROR_LOCK_FORMAT',        'Error. Check lock format' );
 
 class Logger_file extends Logger_Common

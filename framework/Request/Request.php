@@ -80,9 +80,11 @@ class Request
         return $purifier->purify($str);
     }
 
-    public function files($inputNamesArray, $uploadDir, $maxFileSize)
+    public function files($var)
     {
-        return new Files($inputNamesArray, $uploadDir, $maxFileSize);
+        if(array_key_exists($var, $_FILES))
+            return $_FILES[$var];
+        return NULL;
     }
 
 } 

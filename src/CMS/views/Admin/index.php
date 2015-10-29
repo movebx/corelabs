@@ -14,7 +14,15 @@
         <div class="btn-home"><a id="left" href="/">home</a></div>
         <div class="btn-logout"><a id="right" href="/logout">sign out</a> </div>
     </div>
+    <div class="main">
+        <div id="add-image">
+            <form enctype="multipart/form-data" method="post" action="/image/add">
+                <input type="file" name="image" />
+                <button class="submit"></button>
+            </form>
+        </div>
 
+    </div>
 
 
 

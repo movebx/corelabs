@@ -65,8 +65,8 @@ abstract class Logger_Common
      *      %C Fully qualified package (or class) name of the caller
      *      %d Current date in yyyy/MM/dd hh:mm:ss format
      *      %t timer in ss.ssss format
-     *      %F File (full path) where the logging event occurred
-     *      %f File (name only) where the logging event occurred
+     *      %F Files (full path) where the logging event occurred
+     *      %f Files (name only) where the logging event occurred
      *      %H Hostname
      *      %L Line number within the file where the log statement was issued
      *      %m The message to be logged
