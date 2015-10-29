@@ -10,7 +10,7 @@ use Framework\Router\Router;
 
 class Renderer
 {
-    protected $data = [];
+    protected $data;
     protected $_layout;
     protected $error_500;
     protected $viewPath;
@@ -21,12 +21,14 @@ class Renderer
         $this->error_500 = Service::getConfig('error_500');
         $this->viewPath = $viewPath;
 
-        $this->data = array_merge($this->data, $data);
+        $this->data = $data;
 
     }
 
     public function getContentBuffer()
     {
+        $title = Service::getConfig('title');
+
         extract($this->data);
 
         $route = Router::$currentRoute;
@@ -47,6 +49,9 @@ class Renderer
             ob_start();
             include($this->viewPath);
             $content = ob_get_clean();
+
+            if(isset($layout) && $layout == false)
+                return $content;
         }
         else
         {
@@ -57,8 +62,10 @@ class Renderer
             ob_start();
             include($this->error_500);
             $content = ob_get_clean();
-        }
 
+            if(isset($layout) && $layout == false)
+                return $content;
+        }
 
         ob_start();
         include($this->_layout);

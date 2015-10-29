@@ -1,11 +1,39 @@
 <?php
 
 return array(
-    'home'           => array(
-        'pattern'    => '/',
-        'controller' => 'Blog\\Controller\\PostController',
-        'action'     => 'index'
-    ),
+    'home' =>
+        [
+            'pattern'    => '/',
+            'controller' => 'Portfolio\\Controller\\PortfolioController',
+            'action'     => 'index',
+        ],
+    'admin_login' =>
+        [
+            'pattern'    => '/admin/login',
+            'controller' => 'CMS\\Controller\\AdminController',
+            'action'     => 'login'
+        ],
+    'admin' =>
+        [
+            'pattern'    => '/admin',
+            'controller' => 'CMS\\Controller\\AdminController',
+            'action'     => 'index',
+            'security'   =>
+                [
+                    'role' => 'ADMIN',
+                    'login_route' => '/admin/login'
+                ],
+        ],
+    'logout' =>
+        [
+            'pattern'    => '/logout',
+            'controller' => 'CMS\\Controller\\AdminController',
+            'action'     => 'logout',
+        ],
+
+
+
+    /*
     'testredirect'   => array(
         'pattern'    => '/test_redirect',
         'controller' => 'Blog\\Controller\\TestController',
@@ -68,4 +96,5 @@ return array(
         )
 
     )
+    */
 );

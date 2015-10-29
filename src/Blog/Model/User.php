@@ -4,6 +4,7 @@ namespace Blog\Model;
 
 use Framework\DI\Service;
 use Framework\Model\ActiveRecord;
+use Framework\Router\Router;
 use Framework\Security\Model\UserInterface;
 use Framework\Exception\DatabaseException;
 
@@ -32,7 +33,11 @@ class User extends ActiveRecord implements UserInterface
     public function __construct()
     {
         $this->session = Service::get('session');
-        $this->loginRoute = Service::getConfig('security')['login_route'];
+
+        if(isset(Router::$currentRoute['security']['route']))
+            $this->loginRoute = Router::$currentRoute['security']['route'];
+        else
+            $this->loginRoute = Service::getConfig('security')['login_route'];
     }
 
     public function save()
@@ -56,7 +61,7 @@ class User extends ActiveRecord implements UserInterface
     {
         if ($this->session->get('authenticated'))
         {
-            return $this->session->get('authenticated');
+            return ($this->session->get('authenticated') != NULL) ? true : false;
         }
         else
             return false;

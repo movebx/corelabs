@@ -47,44 +47,15 @@
 [NOTICE]C:\xampp\htdocs\mindkFramework\web\index.php in line 8, function: ->run()
 [MESSAGE]107.170.193.184
 ----------------------------------------------------
-
-[08-10-2015 22:33:14][qt:0.046]:
-[NOTICE]C:\xampp\htdocs\mindkFramework\web\index.php in line 8, function: ->run()
-[MESSAGE]::1
+[28-10-2015 12:35:27][qt:0.051]:
+[NOTICE]C:\xampp\htdocs\portfolio\web\index.php in line 8, function: ->run()
+[MESSAGE]yes/no
 ----------------------------------------------------
-[08-10-2015 22:51:59][qt:0.013]:
-[NOTICE]C:\xampp\htdocs\mindkFramework\web\index.php in line 8, function: ->run()
-[MESSAGE]::1
+[28-10-2015 22:38:25][qt:0.03]:
+[FATAL]C:\xampp\htdocs\portfolio\web\index.php in line 8, function: ->run()
+[MESSAGE]Maybe it`s problem with incorrect routes
 ----------------------------------------------------
-[08-10-2015 23:07:58][qt:0.03]:
-[NOTICE]C:\xampp\htdocs\mindkFramework\web\index.php in line 8, function: ->run()
-[MESSAGE]::1
-----------------------------------------------------
-[08-10-2015 23:08:04][qt:0.024]:
-[NOTICE]C:\xampp\htdocs\mindkFramework\web\index.php in line 8, function: ->run()
-[MESSAGE]::1
-----------------------------------------------------
-[08-10-2015 23:08:04][qt:0.017]:
-[NOTICE]C:\xampp\htdocs\mindkFramework\web\index.php in line 8, function: ->run()
-[MESSAGE]::1
-----------------------------------------------------
-[08-10-2015 23:08:05][qt:0.021]:
-[NOTICE]C:\xampp\htdocs\mindkFramework\web\index.php in line 8, function: ->run()
-[MESSAGE]::1
-----------------------------------------------------
-[08-10-2015 23:08:11][qt:0.045]:
-[NOTICE]C:\xampp\htdocs\mindkFramework\web\index.php in line 8, function: ->run()
-[MESSAGE]::1
-----------------------------------------------------
-[08-10-2015 23:08:11][qt:0.023]:
-[NOTICE]C:\xampp\htdocs\mindkFramework\web\index.php in line 8, function: ->run()
-[MESSAGE]::1
-----------------------------------------------------
-[08-10-2015 23:08:14][qt:0.013]:
-[NOTICE]C:\xampp\htdocs\mindkFramework\web\index.php in line 8, function: ->run()
-[MESSAGE]::1
-----------------------------------------------------
-[08-10-2015 23:08:16][qt:0.03]:
-[NOTICE]C:\xampp\htdocs\mindkFramework\web\index.php in line 8, function: ->run()
-[MESSAGE]::1
+[28-10-2015 22:41:29][qt:0.027]:
+[FATAL]C:\xampp\htdocs\portfolio\web\index.php in line 8, function: ->run()
+[MESSAGE]Maybe it`s problem with incorrect routes
 ----------------------------------------------------

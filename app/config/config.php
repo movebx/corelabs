@@ -1,16 +1,17 @@
 <?php
 
 return [
-    'name'        => 'Blog',
+    'name'        => 'portfolio',
     'basePath'    => realpath('../'),
     'mode'        => 'dev',
     'charset'     => 'UTF-8',
+    'title'       => 'Портфолио',
     'routes'      => include('routes.php'),
-    'main_layout' => __DIR__.'/../../src/Blog/views/layout.html.php',
-    'error_500'   => __DIR__.'/../../src/Blog/views/500.html.php',
+    'main_layout' => __DIR__.'/../../src/Portfolio/views/layout.php',
+    'error_500'   => __DIR__.'/../../src/Portfolio/views/500.html.php',
     'pdo'         =>
         [
-            'dns'      => 'mysql:dbname=education;host=localhost',
+            'dns'      => 'mysql:dbname=portfolio;host=localhost',
             'user'     => 'root',
             'password' => '33437373'
         ],

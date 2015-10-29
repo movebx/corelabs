@@ -44,4 +44,9 @@ class Service
             self::$_container_['config'][$key] :
             self::$_container_['config'];
     }
+
+    static public function getRootPath()
+    {
+        return str_replace('\\', '/', self::getConfig('basePath'));
+    }
 }

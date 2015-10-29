@@ -48,6 +48,19 @@ abstract class ActiveRecord
         return $result;
     }
 
+    public function findBy($cell, $val)
+    {
+        $db = Service::get('db');
+        $query = "SELECT * FROM ".static::getTable()." WHERE ".$cell." = :val";
+
+        $stmt = $db->prepare($query);
+
+        $stmt->execute([':val' => $val]);
+
+
+        return $stmt->fetch(\PDO::FETCH_OBJ);
+    }
+
     static public function getTable()
     {
 
@@ -57,5 +70,7 @@ abstract class ActiveRecord
     {
         return [];
     }
+
+
 
 } 

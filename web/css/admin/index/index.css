@@ -1,0 +1,90 @@
+.menu {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 50px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 20px;
+    font-variant: small-caps;
+    font-weight: 700;
+
+
+
+}
+
+.btn-logout {
+    float: right;
+}
+.btn-home {
+    float: left;
+}
+
+.menu #right {
+    width: 100px;
+    height: 49px;
+    float: right;
+    text-align: center;
+    line-height: 49px;
+    border-left: 6px solid #c4c4c4;
+    border-top: 1px solid #c4c4c4;
+    border-bottom: 1px solid #c4c4c4;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    text-decoration: none;
+    color: #337ab7
+
+    transition-property: border-left, width;
+    -webkit-transition-property: border-left, width;
+    -moz-transition-property: border-left, width;
+    -o-transition-property: border-left, width;
+
+    transition-duration: 1s;
+    -webkit-transition-duration: 1s;
+    -moz-transition-duration: 1s;
+    -o-transition-duration: 1s;
+
+    transition-timing-function: cubic-bezier(0, 0, -0.5, 1);
+    -webkit-transition-timing-function: cubic-bezier(0, 0, -0.5, 1);
+    -moz-transition-timing-function: cubic-bezier(0, 0, -0.5, 1);
+    -o-transition-timing-function: cubic-bezier(0, 0, -0.5, 1);
+
+}
+
+.menu #left {
+    width: 100px;
+    height: 49px;
+    float: left;
+    text-align: center;
+    line-height: 49px;
+    border-right: 6px solid #c4c4c4;
+    border-top: 1px solid #c4c4c4;
+    border-bottom: 1px solid #c4c4c4;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    text-decoration: none;
+    color: #337ab7
+
+transition-property: border-left, width;
+    -webkit-transition-property: border-left, width;
+    -moz-transition-property: border-left, width;
+    -o-transition-property: border-left, width;
+
+    transition-duration: 1s;
+    -webkit-transition-duration: 1s;
+    -moz-transition-duration: 1s;
+    -o-transition-duration: 1s;
+
+    transition-timing-function: cubic-bezier(0, 0, -0.5, 1);
+    -webkit-transition-timing-function: cubic-bezier(0, 0, -0.5, 1);
+    -moz-transition-timing-function: cubic-bezier(0, 0, -0.5, 1);
+    -o-transition-timing-function: cubic-bezier(0, 0, -0.5, 1);
+}
+
+.menu a:visited {
+    color: #337ab7
+}
+
+.menu a span {
+    margin: auto;
+}

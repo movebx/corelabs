@@ -16,7 +16,7 @@ class PostController extends Controller
 {
     public function indexAction()
     {
-        return $this->render('index.html', array('posts' => Post::find('all')));
+        return $this->render('login.html', array('posts' => Post::find('all')));
     }
 
     public function getPostAction($id)

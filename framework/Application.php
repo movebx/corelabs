@@ -10,10 +10,13 @@ use Framework\Db\Connection;
 use Framework\Exception\DatabaseException;
 use Framework\Exception\HttpNotFoundException;
 use Framework\Exception\ServerException;
+use Framework\Images\Image;
 use Framework\Log\Logger;
 use Framework\Request\Request;
 use Framework\Router\Router;
+use Framework\Security\Password;
 use Framework\Session\Session;
+use Framework\Response\ResponseRedirect;
 //use Htmlpurifier\HtmlPurifierBuilder;
 
 class Application
@@ -59,8 +62,12 @@ class Application
         $router = Service::get('router');
         $route = $router->attemptToFindRoute();
 
-//Service::get('logger')->log(Service::get('security')->getUserIp());
+//Service::get('logger')->log($route);
+        //Service::get('logger')->log(Password::hash('mirana1111'));
+        //print_r($route);
 
+
+        //echo Service::getRootPath().DIRECTORY_SEPARATOR;
 
 
         try
@@ -69,6 +76,70 @@ class Application
                 throw new HttpNotFoundException();
             else
             {
+
+               if(isset($route['security']))
+               {
+
+                   $user = Service::get('security')->getUser();
+
+                   if(isset($route['security']['login_route']))
+                       Service::get('security')->loginRoute = $route['security']['login_route'];
+
+                   if(is_null($user))
+                   {
+                       $host = Request::getHost();
+                       $redirect = new ResponseRedirect($host.Service::get('security')->loginRoute);
+                       $redirect->send();
+                   }
+
+                   $role = $route['security']['role'];
+
+                   if($role !== $user->role)
+                   {
+                       Service::get('session')->setFlushMsg('warning', 'Не достаточно прав');
+                       $host = Request::getHost();
+                       $redirect = new ResponseRedirect($host);
+                       $redirect->send();
+                   }
+
+
+/*
+                   $c = 0;
+                   for ( ; ; )
+                   {
+                       if ($c > count($routeSecurity) - 1)
+                       {
+                           break;
+                       }
+
+                       switch($routeSecurity[$c])
+                       {
+                           case 'ROLE_USER':
+                               $user = $security->getUser();
+                               if(is_null($user))
+                               {
+                                   $host = Request::getHost();
+                                   $redirect = new ResponseRedirect($host.$security->loginRoute);
+                                   $redirect->send();
+                                   break;
+                               }
+                               else
+                               {
+
+                                   break;
+                               }
+                           //continue security
+                       }
+                       ++$c;
+                   }
+*/
+               }
+
+
+
+
+
+
                 $controllerClass = $route['controller'];
                 if(!class_exists($controllerClass))
                 {

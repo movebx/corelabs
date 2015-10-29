@@ -3,6 +3,7 @@
 namespace Framework\Request;
 
 use Htmlpurifier\HtmlPurifierBuilder;
+use Framework\Request\Files\Files;
 
 class Request
 {
@@ -77,6 +78,11 @@ class Request
         $purifier = $htmlPurifierBuilder->execute();
         //$purifier->delInvalidTags(true);
         return $purifier->purify($str);
+    }
+
+    public function files($inputNamesArray, $uploadDir, $maxFileSize)
+    {
+        return new Files($inputNamesArray, $uploadDir, $maxFileSize);
     }
 
 } 
