@@ -6,7 +6,9 @@ namespace Framework\Files;
 
 class FileSaver
 {
-    protected $file;
+    public $file;
+
+    public $uploadedFile;
 
     public function __construct(File $file)
     {
@@ -17,11 +19,15 @@ class FileSaver
     {
             $temp = $this->file->getTemp();
             if(is_uploaded_file($temp) )
-                if($this->file->isNormalSize())
-                {
-                    move_uploaded_file($temp, $this->file->uploadDir.$this->file->getName());
-                    return true;
-                }
+            {
+                    $name = $this->file->uploadDir.$this->file->getName();
+
+                    if(move_uploaded_file($temp, $name));
+                    {
+                        $this->uploadedFile = $name;
+                        return true;
+                    }
+            }
 
 
         return false;

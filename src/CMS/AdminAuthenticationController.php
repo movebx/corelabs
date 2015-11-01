@@ -6,7 +6,7 @@ use Framework\Controller\Controller;
 use Framework\DI\Service;
 use Framework\Security\Password;
 
-class AdminAuthentication extends Controller
+class AdminAuthenticationController extends Controller
 {
     public function loginAction()
     {
@@ -41,15 +41,6 @@ class AdminAuthentication extends Controller
                 'title'  => 'Вход',
                 'action' => $this->generateRoute('admin_login'),
 
-            ]);
-    }
-
-    public function indexAction()
-    {
-        return $this->render('index',
-            [
-                'layout' => false,
-                'title' => 'Админка',
             ]);
     }
 

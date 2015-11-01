@@ -22,9 +22,9 @@ $activeIfRoute = function ($item) use (&$route) {
 <body >
 <div id="particles-js" class="main">
     <div id="animate-nav-bar" class="nav-bar">
-        <div><a href="#">PORTFOLIO</a></div>
-        <div><a href="#">SERVICES</a></div>
-        <div><a href="#" style="border-right: none; width: 302px;">CONTACT</a></div>
+        <div><a href="/">Portfolio</a></div>
+        <div><a href="#">Services</a></div>
+        <div><a href="#" style="border-right: none; width: 302px;">Contact</a></div>
     </div>
     <div id="animate-content" class="content">
 

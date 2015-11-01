@@ -17,21 +17,42 @@ abstract class ActiveRecord
 
     }
 
-    static public function find($id)
+    static public function findAll()
     {
         $db = Service::get('db');
 
-        if($id == 'all')
-            $query = 'SELECT * FROM '.static::getTable();
-        else
-            $query = 'SELECT * FROM '.static::getTable().' WHERE id = :id';
+        $query = 'SELECT * FROM '.static::getTable();
+
+        $stmt = $db->prepare($query);
+        $stmt->execute();
+
+        $result = $stmt->fetchAll(\PDO::FETCH_OBJ);
+
+        return $result;
+    }
+
+    static public function findById($id)
+    {
+        $db = Service::get('db');
+
+        $query = 'SELECT * FROM '.static::getTable().' WHERE id = :id';
 
         $stmt = $db->prepare($query);
         $stmt->execute([':id' => $id]);
 
-        $result = ($id == 'all') ? $stmt->fetchAll(\PDO::FETCH_OBJ) : $stmt->fetch(\PDO::FETCH_OBJ);
+        $result = $stmt->fetch(\PDO::FETCH_OBJ);
 
         return $result;
+    }
+
+    static public function deleteById($id)
+    {
+        $db = Service::get('db');
+
+        $query = "DELETE FROM ".static::getTable()." WHERE id = :id";
+        $stmt = $db->prepare($query);
+
+        return $stmt->execute([':id' => $id]);
     }
 
     static public function findByEmail($email)

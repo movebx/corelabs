@@ -59,3 +59,55 @@
 [FATAL]C:\xampp\htdocs\portfolio\web\index.php in line 8, function: ->run()
 [MESSAGE]Maybe it`s problem with incorrect routes
 ----------------------------------------------------
+[30-10-2015 23:28:56][qt:0.022]:
+[NOTICE]C:\xampp\htdocs\portfolio\src\CMS\Controller\AdminController.php in line 19, function: ->uploadImage()
+[MESSAGE]C:/xampp/htdocs/portfolio/web/uploads/portfolio/gallery//5633ef28cbb35jpg
+----------------------------------------------------
+[30-10-2015 23:30:35][qt:0.017]:
+[NOTICE]C:\xampp\htdocs\portfolio\src\CMS\Controller\AdminController.php in line 19, function: ->uploadImage()
+[MESSAGE]C:/xampp/htdocs/portfolio/web/uploads/portfolio/gallery//5633ef8b88038.jpg
+----------------------------------------------------
+[30-10-2015 23:34:31][qt:0.032]:
+[NOTICE]C:\xampp\htdocs\portfolio\src\CMS\Controller\AdminController.php in line 19, function: ->uploadImage()
+[MESSAGE]C:/xampp/htdocs/portfolio/web/uploads/portfolio/gallery/5633f07717ee2.jpg
+----------------------------------------------------
+[30-10-2015 23:43:07][qt:0.026]:
+[NOTICE]C:\xampp\htdocs\portfolio\src\CMS\Controller\AdminController.php in line 19, function: ->uploadImage()
+[MESSAGE]C:/xampp/htdocs/portfolio/web/uploads/portfolio/tmp/zphpsafa.jpg
+----------------------------------------------------
+[30-10-2015 23:43:53][qt:0.027]:
+[NOTICE]C:\xampp\htdocs\portfolio\src\CMS\Controller\AdminController.php in line 19, function: ->uploadImage()
+[MESSAGE]C:/xampp/htdocs/portfolio/web/uploads/portfolio/tmp/zphpsafa.jpg
+----------------------------------------------------
+[31-10-2015 00:39:19][qt:0.035]:
+[NOTICE]C:\xampp\htdocs\portfolio\web\index.php in line 9, function: ->run()
+[MESSAGE]width="1280" height="851"
+----------------------------------------------------
+[31-10-2015 00:41:43][qt:0.035]:
+[NOTICE]C:\xampp\htdocs\portfolio\web\index.php in line 9, function: ->run()
+[MESSAGE]1280
+----------------------------------------------------
+[31-10-2015 00:41:50][qt:0.029]:
+[NOTICE]C:\xampp\htdocs\portfolio\web\index.php in line 9, function: ->run()
+[MESSAGE]851
+----------------------------------------------------
+[31-10-2015 23:54:29][qt:0.03]:
+[NOTICE]C:\xampp\htdocs\portfolio\src\CMS\Controller\AdminController.php in line 43, function: ->deleteImage()
+[MESSAGE]
+----------------------------------------------------
+[31-10-2015 23:54:58][qt:0.032]:
+[NOTICE]C:\xampp\htdocs\portfolio\src\CMS\Controller\AdminController.php in line 43, function: ->deleteImage()
+[MESSAGE]1
+----------------------------------------------------
+[01-11-2015 00:06:03][qt:0.211]:
+[NOTICE]C:\xampp\htdocs\portfolio\src\CMS\Controller\AdminController.php in line 46, function: ->redirect()
+[MESSAGE]
+----------------------------------------------------
+[01-11-2015 00:18:42][qt:0.031]:
+[NOTICE]C:\xampp\htdocs\portfolio\src\CMS\Controller\AdminController.php in line 41, function: ->deleteImage()
+[MESSAGE]C:/xampp/htdocs/portfolio/web/uploads/portfolio/galleryzphpsafa.php.jpg
+----------------------------------------------------
+[01-11-2015 00:19:09][qt:0.024]:
+[NOTICE]C:\xampp\htdocs\portfolio\src\CMS\Controller\AdminController.php in line 41, function: ->deleteImage()
+[MESSAGE]C:/xampp/htdocs/portfolio/web/uploads/portfolio/galleryzphpsafa.php.jpg
+----------------------------------------------------

@@ -40,7 +40,9 @@ namespace Framework\Controller;
      {
         if(($msg != '') || ($type != ''))
         {
-            $type = ($type == '') ? 'success' : '';
+
+            $type = ($type == '') ? 'success' : $type;
+
             Service::get('session')->setFlushMsg($type, $msg);
         }
 

@@ -1,3 +1,8 @@
+@font-face {
+    font-family: "Plume";
+    src: url('../fonts/Plume.otf');
+}
+
 body {
     background-color: #fff9f2;
 }
@@ -15,6 +20,11 @@ body {
 .nav-bar {
     width: inherit;
     height: 50px;
+
+    font-family: Plume;
+    font-size: 35px;
+    font-variant: normal;
+
 
     border-radius: 50px;
     -webkit-border-radius: 50px;
@@ -51,7 +61,7 @@ body {
     text-align: center;
     font-variant: small-caps;
     font-weight: 700;
-    line-height: 49px;
+    line-height: 39px;
     text-decoration: none;
 
 
@@ -86,7 +96,7 @@ body {
     position: absolute;
     top: 200px;
     margin-bottom: 40px;
-    padding: 5px;
+    padding: 10px;
 
 
     transition-property: box-shadow, border;
@@ -103,6 +113,14 @@ body {
     -webkit-transition-timing-function: cubic-bezier(0, 0, 1, 1);
     -moz-transition-timing-function: cubic-bezier(0, 0, 1, 1);
     -o-transition-timing-function: cubic-bezier(0, 0, 1, 1);
+}
 
+.img-preview {
+    float: left;
+}
 
+.gallery-img {
+    width: 200px;
+    height: 300px;
+    margin: 10px;
 }

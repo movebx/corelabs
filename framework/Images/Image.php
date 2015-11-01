@@ -1,20 +1,24 @@
 <?php
 
+
 namespace Framework\Images;
 
 
 class Image
 {
-    static public function getImageSize($filePath)
+    protected $image;
+
+    public function __construct($imagePath)
     {
-        $size = getimagesize($filePath);
-        return $size ? $size : NULL;
+        if(file_exists($imagePath))
+            $this->image = $imagePath;
 
     }
 
-    static public function getImageMimeType($filePath)
+    public function getThumbnail($thumbWidth, $thumbHeight)
     {
-        $size = self::getImageSize($filePath);
-        return $size ? $size['mime'] : NULL;
+        list($width, $height) = ImageHelper::getImageSize($this->image);
+
+
     }
-}
+} 

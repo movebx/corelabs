@@ -10,11 +10,11 @@ use Framework\Db\Connection;
 use Framework\Exception\DatabaseException;
 use Framework\Exception\HttpNotFoundException;
 use Framework\Exception\ServerException;
-use Framework\Images\Image;
+use Framework\Images\ImageHelper;
 use Framework\Log\Logger;
 use Framework\Request\Request;
 use Framework\Router\Router;
-use Framework\Security\Password;
+
 use Framework\Session\Session;
 use Framework\Response\ResponseRedirect;
 //use Htmlpurifier\HtmlPurifierBuilder;
@@ -66,6 +66,9 @@ class Application
         //Service::get('logger')->log(Password::hash('mirana1111'));
         //print_r($route);
 
+        //Service::get('security')->clear();
+        //$size = ImageHelper::getImageSize('C:\xampp\htdocs\portfolio\web\uploads\portfolio\gallery\2.jpg');
+        //Service::get('logger')->log($size[1]);
 
 
 

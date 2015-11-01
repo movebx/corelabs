@@ -13,6 +13,12 @@ return array(
             'controller' => 'CMS\\Controller\\AdminController',
             'action'     => 'login'
         ],
+    'logout' =>
+        [
+            'pattern'    => '/logout',
+            'controller' => 'CMS\\Controller\\AdminController',
+            'action'     => 'logout',
+        ],
     'admin_add_image' =>
         [
             'pattern'    => '/image/add',
@@ -34,11 +40,11 @@ return array(
                     'login_route' => '/admin/login'
                 ],
         ],
-    'logout' =>
+    'delete_image' =>
         [
-            'pattern'    => '/logout',
+            'pattern'    => '/delete/{id}',
             'controller' => 'CMS\\Controller\\AdminController',
-            'action'     => 'logout',
+            'action'     => 'delete',
         ],
 
 
