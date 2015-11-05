@@ -26,6 +26,7 @@ class AddImage extends ActiveRecord
     {
         try
         {
+
             $file = new File($image, 10000);
 
             $uploadDir = ASSETS.'uploads/portfolio/gallery/';
@@ -40,7 +41,7 @@ class AddImage extends ActiveRecord
             if (!$fileSaver->save())
                 throw new \Exception('File not selected');
 
-            if(!ImageHelper::isImage($fileSaver->uploadedFile, ['gif', 'png', 'jpg']))
+            if(!ImageHelper::isImage($fileSaver->uploadedFile, ['gif', 'png', 'jpg', 'jpeg']))
                 throw new \Exception('File is not image');
 
             if(file_exists($uploadDir.$file->getName()))

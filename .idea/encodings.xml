@@ -6,6 +6,7 @@
     <file url="file://$PROJECT_DIR$/src/CMS/views/Admin/index.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/CMS/views/Admin/login.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/Portfolio/Model/AddImage.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/Portfolio/layout.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/Portfolio/views/layout.php" charset="UTF-8" />
   </component>
 </project>

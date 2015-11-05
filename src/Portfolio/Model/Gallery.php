@@ -23,7 +23,7 @@ class Gallery extends ActiveRecord
     {
         $image = self::findById($id);
 
-        Service::get('logger')->log(ASSETS.'uploads/portfolio/gallery'.$image->name);
+        //Service::get('logger')->log(ASSETS.'uploads/portfolio/gallery'.$image->name);
 
         if(!FileHelper::deleteFile(ASSETS.'uploads/portfolio/gallery/'.$image->name))
             return false;

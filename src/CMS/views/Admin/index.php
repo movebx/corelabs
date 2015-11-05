@@ -19,7 +19,7 @@
                     foreach($msgs as $msg):
         ?>
                         
-        <div class="alert <?= $class ?>"><span><?= $msg.$class?></span></div>
+        <div class="alert <?= $class ?>"><span><?= $msg ?></span></div>
 
         <?php endforeach ?>
 
@@ -71,14 +71,25 @@
     new AnimateLinks();
 
 
-    var alert = document.querySelector('.alert');
-    if(alert)
+    var alertt = document.querySelector('.alert');
+    if(alertt)
     {
         setTimeout(function(){
-            alert.parentElement.removeChild(alert);
+            alertt.parentElement.removeChild(alertt);
         }, 3000)
     }
 
+
+    (function()
+    {
+        var mainHeight = document.querySelector('.main');
+        var imageControlMain = document.querySelector('#gallery-images');
+
+        var computedStyle = getComputedStyle(mainHeight);
+
+
+        mainHeight.style.height = (imageControlMain.offsetHeight + 220) + 'px';
+    })();
 
 
     function AnimateLinks()

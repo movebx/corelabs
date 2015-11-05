@@ -5,6 +5,7 @@ namespace CMS\Controller;
 
 use CMS\AdminAuthenticationController;
 
+use Framework\DI\Service;
 use Framework\Response\ResponseRedirect;
 use Portfolio\Model\AddImage;
 use Portfolio\Model\Gallery;
@@ -16,6 +17,7 @@ class AdminController extends AdminAuthenticationController
     {
         $request = $this->getRequest();
         $image = $request->files('image');
+
         $imageAlt = $request->post('alt');
 
         $addImage = new AddImage();

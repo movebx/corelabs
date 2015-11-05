@@ -111,3 +111,45 @@
 [NOTICE]C:\xampp\htdocs\portfolio\src\CMS\Controller\AdminController.php in line 41, function: ->deleteImage()
 [MESSAGE]C:/xampp/htdocs/portfolio/web/uploads/portfolio/galleryzphpsafa.php.jpg
 ----------------------------------------------------
+
+
+[02-11-2015 02:40:05][qt:0.024]:
+[NOTICE]C:\xampp\htdocs\portfolio\src\Portfolio\Model\AddImage.php in line 40, function: ->save()
+[MESSAGE]=
+----------------------------------------------------
+[02-11-2015 02:40:23][qt:0.008]:
+[NOTICE]C:\xampp\htdocs\portfolio\src\Portfolio\Model\AddImage.php in line 40, function: ->save()
+[MESSAGE]=
+----------------------------------------------------
+[02-11-2015 02:47:00][qt:0.02]:
+[NOTICE]C:\xampp\htdocs\portfolio\src\CMS\Controller\AdminController.php in line 24, function: ->uploadImage()
+[MESSAGE]array(5) {
+  ["name"]=>
+  string(10) "sfffff.jpg"
+  ["type"]=>
+  string(0) ""
+  ["tmp_name"]=>
+  string(0) ""
+  ["error"]=>
+  int(1)
+  ["size"]=>
+  int(0)
+}
+
+----------------------------------------------------
+[02-11-2015 02:55:16][qt:0.02]:
+[NOTICE]C:\xampp\htdocs\portfolio\src\CMS\Controller\AdminController.php in line 24, function: ->uploadImage()
+[MESSAGE]array(5) {
+  ["name"]=>
+  string(10) "sczcsq.jpg"
+  ["type"]=>
+  string(0) ""
+  ["tmp_name"]=>
+  string(0) ""
+  ["error"]=>
+  int(1)
+  ["size"]=>
+  int(0)
+}
+
+----------------------------------------------------

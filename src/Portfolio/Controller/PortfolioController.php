@@ -16,6 +16,7 @@ class PortfolioController extends Controller
         return $this->render('index',
         [
             'images' => $images,
+
         ]);
     }
 } 

@@ -1,16 +1,62 @@
 <?php
+$randomScrReveal = function(){
+    $arr =
+        [
+            'data-sr="enter left, hustle 20px"',
+            'data-sr="wait 1s, ease-in-out 100px"',
+            'data-sr="move 16px scale up 20%, over 2s"',
+            'data-sr="enter bottom, roll 45deg, over 2s"'
+        ];
 
+    return $arr[rand(0, 3)];
+};
 ?>
 
 <div class="gallery">
-    <?php
-        foreach($images as $image):
-            $imgHref = \Framework\Request\Request::getHost().'/uploads/portfolio/gallery/'.$image->name;
-    ?>
-    <div class="img-preview">
-        <a href="<?= $imgHref?>">
-            <img class="gallery-img" src="<?= $imgHref ?>" alt="<?= $image->alt ?>" />
-        </a>
-    </div>
-    <?php endforeach ?>
+    <section class="images">
+                <?php
+                    foreach($images as $image):
+                ?>
+                <img <?=$randomScrReveal()?> src="<?= '/uploads/portfolio/gallery/'.$image->name ?>" alt="<?=$image->alt?>"/>
+                <?php endforeach ?>
+    </section>
 </div>
+
+<script src="/js/scrollReveal.min.js"></script>
+<script>
+
+    (function($)
+    {
+        'use strict';
+
+        window.sr= new scrollReveal({
+            reset: false,
+            move: '50px',
+            mobile: false
+        });
+
+    })();
+
+    (function()
+    {
+        var gallery = $('.gallery');
+
+        gallery.delegate('img', 'click', function(e)
+        {
+            var target = $(e.target);
+
+            $('<div id="gallery-bg"></div>').appendTo('body');
+            $('<div id="previous-img"></div>').appendTo('#gallery-bg');
+            $('<div id="next-img"></div>').appendTo('#gallery-bg');
+            $('<img id="current-img"  />').appendTo('body');
+
+
+            var currentImg = $('#current-img');
+            currentImg.attr('src', target.attr('src'));
+
+
+        });
+
+    })();
+
+</script>
