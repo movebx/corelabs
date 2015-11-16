@@ -1,52 +1,23 @@
+
 @font-face {
     font-family: 'Plume';
     src: url('../../fonts/Nicoletta.ttf');
 }
 
-@media (max-width: 1000px) {
-
-    .images {
-
-        -moz-column-count: 3;
-
-        -webkit-column-count: 3;
-
-        column-count: 3;
-
-    }
-
+@font-face {
+    font-family: 'FontAwesome';
+    src: url('../../fonts/FontAwesome.otf');
 }
 
-@media (max-width: 800px) {
-
-    .images {
-
-        -moz-column-count:    2;
-
-        -webkit-column-count: 2;
-
-        column-count:         2;
-
-    }
-
-}
-
-@media (max-width: 400px) {
-
-    .images {
-
-        -moz-column-count:    1;
-        -webkit-column-count: 1;
-        column-count:         1;
-
-    }
-
-}
 
 
 
 body {
     margin: 0;
+    background-color: rgba(232, 255, 255, 0.32);
+
+
+
 }
 
 .site-font {
@@ -54,10 +25,8 @@ body {
 }
 
 #box {
-    background-color: #FFF5E6;
     width: 100%;
     height: auto;
-    z-index: 1;
 
 
 }
@@ -65,9 +34,9 @@ body {
 #header {
     width: 100%;
     height: auto;
-    margin-top: 10% 0;
+    //margin-top: 10%;
     text-align: center;
-    padding-top: 6%;
+    //padding-top: 6%;
 
 
 }
@@ -80,10 +49,11 @@ body {
     font-size: 8em;
     font-weight: 800;
     color: rgb(65, 65, 65);
-    margin-top: 10% 0;
+    margin-top: 10%;
     text-shadow: 0px 0px 4px gray;
 
     opacity: 0.8;
+
 
 }
 
@@ -92,27 +62,38 @@ body {
 
 }
 
-.nav-bar ul li {
+
+.nav-bar div {
+    display: inline-block;
+    width: auto;
+    height: auto;
     padding: 0 1%;
-    display: inline;
+
 
 }
 
+.nav-bar .delimiter {
+    border-right: 1px solid rgb(65, 65, 65);
+}
+
 .nav-bar a {
+
     color: #453F3F;
     text-decoration: none;
-    //font-size: 1.2em;
     font-weight: 500;
     text-shadow: 1px 1px 2px #453F3F;
     opacity: 0.6;
 }
 
-.active {
+.nav-bar a:active {
     opacity: 1;
 }
 
+
 #content {
     margin-top: 2%;
+    min-height: 400px;
+
 
 }
 
@@ -134,9 +115,10 @@ body {
 }
 
 .gallery img {
+    display: inline-block;
     width: 96% !important;
     height: auto !important;
-    margin: 2% 1%;
+    margin: 2% 2%;
     -moz-box-shadow: 1px 2px 6px #453F3F;
     -webkit-box-shadow: 1px 2px 6px #453F3F;
     box-shadow: 1px -2px 6px black;
@@ -155,51 +137,90 @@ body {
     width: 100%;
     height: 100%;
     background-color: #000000;
-    opacity: 0.9;
-
-
-}
-
-#previous-img {
-    background-color: #000000;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 200px;
-    height: 100%;
-
-    opacity: 0.1;
-    border: 1px solid black;
-
-}
-
-#next-img {
-    background-color: #000000;
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 200px;
-    height: 100%;
-
-    border: 1px solid black;
-    opacity: 0.1;
+    opacity: 0.8;
+    font-family: 'FontAwesome';
 
 }
 
 
-
-#current-img {
+.current-img {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     margin: auto;
-    max-width: 800px;
-    max-height: 600px;
+    max-width: 90%;
+    max-height: 90%;
+
+
+    -moz-transform: scale(0, 1); /* Для Firefox */
+    -ms-transform: scale(0, 1); /* Для IE */
+    -webkit-transform: scale(0, 1); /* Для Safari, Chrome, iOS */
+    -o-transform: scale(0, 1); /* Для Opera */
+    transform: scale(0, 1);
+
+
+    -webkit-transition: -moz-transform 1s cubic-bezier(0, 0, 1, 1);
+    -moz-transition: -webkit-transform 1s cubic-bezier(0, 0, 1, 1);
+    -o-transition: -o-transform 1s cubic-bezier(0, 0, 1, 1);
+    transition: all 1s cubic-bezier(0, 0, 1, 1);
+
+}
+
+.animate-img {
+    -moz-transform: scale(1, 1); /* Для Firefox */
+    -ms-transform: scale(1, 1); /* Для IE */
+    -webkit-transform: scale(1, 1); /* Для Safari, Chrome, iOS */
+    -o-transform: scale(1, 1); /* Для Opera */
+    transform: scale(1, 1);
 
 
 }
+
+.contact {
+    width: 70%;
+    height: 100px;
+    background-color: #eee;
+    margin: 0 auto;
+    border-radius: 7px;
+    padding: 2%;
+
+}
+
+
+.contact .text li{
+
+    list-style: none;
+    font-family: 'Arial';
+    font-size: 120%;
+    font-weight: 700;
+    color: rgb(65, 65, 65);
+    opacity: 0.8;
+    padding: 0.5%;
+}
+
+.contact span {
+    font-family: 'FontAwesome';
+}
+
+
+.foot {
+    text-align: center;
+    padding: 0.8%;
+    margin-top: 3%;
+    height: 20%;
+    background-color: dimgray;
+    font-family: 'FontAwesome';
+
+}
+
+.foot .vk-ref {
+    margin-left: 0.5%;
+    border-radius: 3px;
+}
+
+
 
 
 

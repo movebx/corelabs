@@ -1,0 +1,217 @@
+@media screen and (min-width: 1400px) {
+    .nav-bar a {
+
+        font-size: 200%;
+
+    }
+
+}
+
+
+
+@media screen and (min-width: 1200px) {
+
+
+}
+
+
+
+
+
+
+/* Для некоторых нетбуков и планшетов (таблеток) */
+@media screen and (min-width: 768px) and (max-width: 979px) {
+
+
+    .nav-bar a {
+
+        font-size: 150%;
+
+    }
+
+    .images {
+        -webkit-column-count: 3;
+        -webkit-column-gap: 0px;
+        -moz-column-count: 3;
+        -moz-column-gap: 0px;
+        column-count: 3;
+        column-gap: 0px;
+
+    }
+
+    .gallery {
+        width: 100%;
+    }
+
+
+
+}
+
+
+
+
+
+
+
+/* Для планшетов и некоторых телефонов */
+@media screen and (max-width: 767px) {
+    #header {
+        margin-top: 0;
+        text-align: center;
+        padding-top: 6%;
+
+
+    }
+
+    .nav-bar div {
+        display: block;
+        padding: 5% 0;
+        border: none;
+        border-bottom: 1px solid dimgray;
+    }
+
+    .nav-bar .delimiter {
+        border-right: none;
+    }
+
+    .nav-bar a {
+
+        font-size: 150%;
+
+    }
+
+
+    .images {
+        -webkit-column-count: 1;
+        -webkit-column-gap: 0px;
+        -moz-column-count: 1;
+        -moz-column-gap: 0px;
+        column-count: 1;
+        column-gap: 0px;
+
+    }
+
+    .gallery {
+        width: 100%;
+    }
+
+    .gallery img {
+        display: inline-block;
+        width: 96% !important;
+        height: auto !important;
+        margin: 1% 2%;
+        -moz-box-shadow: 1px -2px 1px #453F3F;
+        -webkit-box-shadow: 1px -2px 1px #453F3F;
+        box-shadow: 1px -2px 1px black;
+        opacity: 1;
+
+    }
+
+    #gallery-bg {
+        display: none;
+
+    }
+
+
+    .current-img {
+        display:none;
+    }
+
+    .contact {
+        width: inherit;
+        border-radius: 0;
+        padding: 2%;
+        text-align: center;
+
+    }
+
+    .contact .text {
+        font-size: 140%;
+        font-weight: 700;
+    }
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Для телефонов и некоторых устройств у которых совсем маленький экран */
+@media screen and (max-width: 480px)
+{
+    #header {
+        margin-top: 0;
+        text-align: center;
+        padding-top: 6%;
+
+
+    }
+
+    .nav-bar div {
+        display: block;
+        padding: 10% 0;
+        border: none;
+        border-bottom: 1px solid dimgray;
+    }
+
+    .nav-bar .delimiter {
+        border-right: none;
+    }
+
+
+    .nav-bar a {
+
+        font-size: 150%;
+
+    }
+
+    .images {
+        -webkit-column-count: 1;
+        -webkit-column-gap: 0px;
+        -moz-column-count: 1;
+        -moz-column-gap: 0px;
+        column-count: 1;
+        column-gap: 0px;
+
+    }
+
+    .gallery {
+        width: 100%;
+    }
+
+    .gallery img {
+        display: inline-block;
+        width: 96% !important;
+        height: auto !important;
+        margin: 1% 2%;
+        -moz-box-shadow: 1px -2px 1px #453F3F;
+        -webkit-box-shadow: 1px -2px 1px #453F3F;
+        box-shadow: 1px -2px 1px black;
+        opacity: 1;
+
+    }
+
+    #gallery-bg {
+        display: none;
+
+    }
+
+
+    .current-img {
+        display:none;
+
+
+    }
+
+
+}

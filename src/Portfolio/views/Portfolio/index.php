@@ -1,4 +1,5 @@
 <?php
+
 $randomScrReveal = function(){
     $arr =
         [
@@ -22,20 +23,8 @@ $randomScrReveal = function(){
     </section>
 </div>
 
-<script src="/js/scrollReveal.min.js"></script>
+
 <script>
-
-    (function($)
-    {
-        'use strict';
-
-        window.sr= new scrollReveal({
-            reset: false,
-            move: '50px',
-            mobile: false
-        });
-
-    })();
 
     (function()
     {
@@ -46,16 +35,28 @@ $randomScrReveal = function(){
             var target = $(e.target);
 
             $('<div id="gallery-bg"></div>').appendTo('body');
-            $('<div id="previous-img"></div>').appendTo('#gallery-bg');
-            $('<div id="next-img"></div>').appendTo('#gallery-bg');
-            $('<img id="current-img"  />').appendTo('body');
 
+            $('<img class="current-img"  />').appendTo('body');
 
-            var currentImg = $('#current-img');
+            $('#gallery-bg').click(function(e)
+            {
+                $(e.target).detach();
+                $('.current-img').detach();
+            });
+
+            var currentImg = $('.current-img');
             currentImg.attr('src', target.attr('src'));
+
+            setTimeout(function()
+            {
+                currentImg.addClass('animate-img');
+            }, 200);
+
+
 
 
         });
+
 
     })();
 

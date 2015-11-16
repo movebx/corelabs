@@ -46,7 +46,12 @@ return array(
             'controller' => 'CMS\\Controller\\AdminController',
             'action'     => 'delete',
         ],
-
+    'contact' =>
+        [
+            'pattern'    => '/contact',
+            'controller' => 'Portfolio\\Controller\\PortfolioController',
+            'action'     => 'contact',
+        ]
 
 
     /*

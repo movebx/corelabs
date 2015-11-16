@@ -5,6 +5,7 @@ namespace Portfolio\Controller;
 
 
 use Framework\Controller\Controller;
+use Framework\Response\JSONResponse;
 use Portfolio\Model\Gallery;
 
 class PortfolioController extends Controller
@@ -19,4 +20,18 @@ class PortfolioController extends Controller
 
         ]);
     }
+
+    public function contactAction() {
+
+        return $this->render('contact');
+    }
+    /*
+    public function ajaxAction()
+    {
+        $images = $images = (new Gallery())->getImages();
+
+
+        return new JSONResponse($images);
+    }
+    */
 } 

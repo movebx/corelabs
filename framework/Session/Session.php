@@ -3,7 +3,6 @@
 namespace Framework\Session;
 
 
-use Framework\DI\Service;
 
 class Session
 {

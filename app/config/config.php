@@ -3,16 +3,16 @@
 return [
     'name'        => 'portfolio',
     'basePath'    => realpath('../'),
-    'mode'        => 'dev',
+    'mode'        => 'prod',
     'charset'     => 'UTF-8',
-    'title'       => 'Портфолио',
+    'title'       => 'Наращивание ресниц в Сумах, классика, 2D 3D наращивание, визаж',
     'routes'      => include('routes.php'),
     'main_layout' => __DIR__.'/../../src/Portfolio/views/layout.php',
     'error_500'   => __DIR__.'/../../src/Portfolio/views/500.html.php',
     'pdo'         =>
         [
-            'dns'      => 'mysql:dbname=portfolio;host=localhost',
-            'user'     => 'root',
+            'dns'      => 'mysql:dbname=u151405890_port;host=localhost',
+            'user'     => 'u151405890_root',
             'password' => '33437373'
         ],
     'security'    =>

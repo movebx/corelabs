@@ -20,8 +20,7 @@ class Response implements iResponse
         $this->content = $content;
         $this->code = $code;
         $this->responseMessage = $msg;
-        if(!empty($headers))
-            $this->headers = $headers;
+        $this->headers = $headers;
         $this->type = $type;
         $this->htProtocol = $_SERVER['SERVER_PROTOCOL'];
     }

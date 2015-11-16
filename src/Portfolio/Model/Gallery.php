@@ -3,7 +3,6 @@
 namespace Portfolio\Model;
 
 
-use Framework\DI\Service;
 use Framework\Files\FileHelper;
 use Framework\Model\ActiveRecord;
 

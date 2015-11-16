@@ -23,7 +23,7 @@ class Logger
 
     public function getLogger()
     {
-        $logger = $this->_loggers.DIRECTORY_SEPARATOR.ucfirst($this->_name).self::TARGET;
+        $logger = $this->_loggers.'\\'.ucfirst($this->_name).self::TARGET;
         $logger = new $logger($this->_logs);
 
         return ($logger instanceof iLogger) ? $logger : NULL;

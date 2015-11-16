@@ -3,7 +3,6 @@
 
 namespace Framework\Files;
 
-use Framework\DI\Service;
 
 class FileSaver
 {

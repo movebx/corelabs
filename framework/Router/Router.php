@@ -4,8 +4,6 @@ namespace Framework\Router;
 
 
 use Framework\DI\Service;
-use Framework\Request\Request;
-use Framework\Response\ResponseRedirect;
 
 class Router
 {
@@ -18,12 +16,14 @@ class Router
     public function __construct($routes)
     {
         $this->routes = $routes;
+
     }
 
     public function attemptToFindRoute()
     {
         $request = Service::get('request');
         $uri = $request->getURI();
+
         if($uri != '/')
             rtrim($uri, '/');
 
@@ -40,7 +40,7 @@ class Router
             $pattern = preg_replace('~\{\w+\}~',
                 isset($requirements["id"]) ? '('.$requirements["id"].')' : '([\w\d]+)',
                 $rContent['pattern']);
-            //можно написать чтоб парсило параметры в requirements и подставляло автоматически (c)лень
+            //пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ requirements пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ (c)пїЅпїЅпїЅпїЅ
 
 
 

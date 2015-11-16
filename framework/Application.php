@@ -62,7 +62,10 @@ class Application
         $router = Service::get('router');
         $route = $router->attemptToFindRoute();
 
-//Service::get('logger')->log($route);
+
+
+
+        
         //Service::get('logger')->log(Password::hash('mirana1111'));
         //print_r($route);
 
@@ -98,7 +101,7 @@ class Application
 
                    if($role !== $user->role)
                    {
-                       Service::get('session')->setFlushMsg('warning', 'Не достаточно прав');
+                       Service::get('session')->setFlushMsg('warning', 'пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ');
                        $host = Request::getHost();
                        $redirect = new ResponseRedirect($host);
                        $redirect->send();

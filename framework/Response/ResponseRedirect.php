@@ -4,8 +4,7 @@ namespace Framework\Response;
 
 
 use Framework\DI\Service;
-use Framework\Request\Request;
-use Framework\Router\Router;
+
 
 class ResponseRedirect implements  iResponse
 {
